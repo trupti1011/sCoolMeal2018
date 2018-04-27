@@ -1,0 +1,261 @@
+﻿
+@{
+    ViewBag.Title = "FAQ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br /><br />
+
+<div class="row" style="margin-bottom:0;padding-bottom:0; margin-top:90px">
+    <div class="col-lg-12">
+        <div class="col-lg-2"></div>
+
+        <div class="col-lg-8">
+            <p class="Frequently-asked-que">Frequently asked questions</p>
+
+            <div class="panel-group" id="faqAccordion" style="background:#fff">
+                <div class="panel panel-default " style="border:none; border-bottom:solid 1px #d8d8d8;">
+                    <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question0" style="background-color:white">
+                        <p class="panel-title">
+                            <a href="#" class="Type-question">Who decides the menu & the nutritional aspects of each meal?</a>
+                        </p>
+                    </div>
+                    <div id="question0" class="panel-collapse collapse" style="height: 0px;">
+                        <div class="panel-body">
+                            <h5><span style="font-size:12px;">All our meals are created by food technologists and inhouse nutritionists who are experts in child nutrition. Each meal that we serve is a complete meal with balanced nutrition required for a growing child   </span></h5>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default " style="border:none; border-bottom:solid 1px #d8d8d8;">
+                    <div style="background-color:white" class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question1">
+                        <h4 class="panel-title ">
+                            <a href="#" class="Type-question">What are the safety standards that sCoolMeal adheres to?</a>
+                        </h4>
+                    </div>
+                    <div id="question1" class="panel-collapse collapse" style="height: 0px;">
+                        <div class="panel-body">
+                            <h5><span style="font-size:12px;">sCoolMeal is ISO22000 certified and FSSAI licensed and we follow the highest quality standards while cooking and packing the meals</span></h5>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default " style="border:none; border-bottom:solid 1px #d8d8d8;">
+                    <div style="background-color:white" class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question2">
+                        <h4 class="panel-title">
+                            <a href="#" class="Type-question">Can I order a sample meal before subscription?</a>
+                        </h4>
+                    </div>
+                    <div id="question2" class="panel-collapse collapse" style="height: 0px;">
+                        <div class="panel-body">
+                            <h5><span style="font-size:12px;">Definitely! You can go to <a href="@Url.Action("SubscriptionPlans","Home")">Subscription plans</a> and choose a one day meal</span></h5>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default " style="border:none; border-bottom:solid 1px #d8d8d8;">
+                    <div style="background-color:white" class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question3">
+                        <h4 class="panel-title">
+                            <a href="#" class="Type-question">Why is there a  difference in pricing?</a>
+                        </h4>
+                    </div>
+                    <div id="question3" class="panel-collapse collapse" style="height: 0px;">
+                        <div class="panel-body">
+                            <h5>
+                                <span style="font-size:12px;">
+                                    At sCoolMeal, we broadly classify school children in to four categories :
+                                    <br />Grades 1-3<br />Grades 4-7<br />Grades 8-10<br />Grades 11-12<br />Meals are portioned according to <b> Indian Recommended Dietary Allowance</b>
+                                </span>
+                            </h5>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default " style="border:none; border-bottom:solid 1px #d8d8d8;">
+                    <div style="background-color:white" class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question14">
+                        <h4 class="panel-title">
+                            <a href="@Url.Action("SubscriptionPlans","Home")" " class="Type-question">What are the subscription plans available?</a>
+                        </h4>
+                    </div>
+                    <div id="question14" class="panel-collapse collapse" style="height: 0px;">
+                        <div class="panel-body">
+                            <h5><span>Answer</span></h5>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                @*<div class="panel panel-default " style="border:none; border-bottom:solid 1px #d8d8d8;">
+                        <div style="background-color:white" class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question4">
+                            <h4 class="panel-title">
+                                <a href="#" class="Type-question">Which are the areas where you deliver?</a>
+                            </h4>
+                        </div>
+                        <div id="question4" class="panel-collapse collapse" style="height: 0px;">
+                            <div class="panel-body">
+                                <h5><span class="label label-primary">Answer</span></h5>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default " style="border:none; border-bottom:solid 1px #d8d8d8;">
+                        <div style="background-color:white" class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question5">
+                            <h4 class="panel-title">
+                                <a href="#" class="Type-question">Which are the schools where sCoolMeal facility is available?</a>
+                            </h4>
+                        </div>
+                        <div id="question5" class="panel-collapse collapse" style="height: 0px;">
+                            <div class="panel-body">
+                                <h5><span class="label label-primary">Answer</span></h5>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default " style="border:none; border-bottom:solid 1px #d8d8d8;">
+                        <div style="background-color:white" class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question6">
+                            <h4 class="panel-title">
+                                <a href="#" class="Type-question">Which are the schools that you are serving already?</a>
+                            </h4>
+                        </div>
+                        <div id="question6" class="panel-collapse collapse" style="height: 0px;">
+                            <div class="panel-body">
+                                <h5><span class="label label-primary">Answer</span></h5>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default " style="border:none; border-bottom:solid 1px #d8d8d8;">
+                        <div style="background-color:white" class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question7">
+                            <h4 class="panel-title">
+                                <a href="#" class="Type-question">Is sCoolMeal certified by any food authority?</a>
+                            </h4>
+                        </div>
+                        <div id="question7" class="panel-collapse collapse" style="height: 0px;">
+                            <div class="panel-body">
+                                <h5><span class="label label-primary">Answer</span></h5>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default" style="border:none; border-bottom:solid 1px #d8d8d8;">
+                        <div style="background-color:white" class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question8">
+                            <h4 class="panel-title">
+                                <a href="#" class="Type-question">Why should I trust sCoolMeal?</a>
+                            </h4>
+                        </div>
+                        <div id="question8" class="panel-collapse collapse" style="height: 0px;">
+                            <div class="panel-body">
+                                <h5><span class="label label-primary">Answer</span></h5>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default " style="border:none; border-bottom:solid 1px #d8d8d8;">
+                        <div style="background-color:white" class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question9">
+                            <h4 class="panel-title">
+                                <a href="#" class="Type-question">How does it work?</a>
+                            </h4>
+                        </div>
+                        <div id="question9" class="panel-collapse collapse" style="height: 0px;">
+                            <div class="panel-body">
+                                <h5><span class="label label-primary">Answer</span></h5>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default " style="border:none; border-bottom:solid 1px #d8d8d8;">
+                        <div style="background-color:white" class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question10">
+                            <h4 class="panel-title">
+                                <a href="#" class="Type-question"></a>
+                            </h4>
+                        </div>
+                        <div id="question10" class="panel-collapse collapse" style="height: 0px;">
+                            <div class="panel-body">
+                                <h5><span class="label label-primary">Answer</span></h5>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default " style="border:none; border-bottom:solid 1px #d8d8d8;">
+                        <div style="background-color:white" class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question11">
+                            <h4 class="panel-title">
+                                <a href="#" class="Type-question"></a>
+                            </h4>
+                        </div>
+                        <div id="question11" class="panel-collapse collapse" style="height: 0px;">
+                            <div class="panel-body">
+                                <h5><span class="label label-primary">Answer</span></h5>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default " style="border:none; border-bottom:solid 1px #d8d8d8;">
+                        <div style="background-color:white" class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question12">
+                            <h4 class="panel-title">
+                                <a href="#" class="Type-question">Why is the pricing different with respect to academic classes?</a>
+                            </h4>
+                        </div>
+                        <div id="question12" class="panel-collapse collapse" style="height: 0px;">
+                            <div class="panel-body">
+                                <h5><span class="label label-primary">Answer</span></h5>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default " style="border:none; border-bottom:solid 1px #d8d8d8;">
+                        <div style="background-color:white" class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question13">
+                            <h4 class="panel-title">
+                                <a href="#" class="Type-question">Why is there a differential pricing?</a>
+                            </h4>
+                        </div>
+                        <div id="question13" class="panel-collapse collapse" style="height: 0px;">
+                            <div class="panel-body">
+                                <h5><span class="label label-primary">Answer</span></h5>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>*@
+
+                @*<div class="panel panel-default " style="border:none; border-bottom:solid 1px #d8d8d8;">
+                        <div style="background-color:white" class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question15">
+                            <h4 class="panel-title">
+                                <a href="#" class="Type-question">How does sCoolMeal help me?</a>
+                            </h4>
+                        </div>
+                        <div id="question15" class="panel-collapse collapse" style="height: 0px;">
+                            <div class="panel-body">
+                                <h5><span class="label label-primary">Answer</span></h5>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>*@
+                <div class="panel panel-default " style="border:none; border-bottom:solid 1px #d8d8d8;">
+                    <div style="background-color:white" class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question16">
+
+                        <a href="#" class="Still-have-questions">Still have questions?</a>
+
+                    </div>
+                    <div id="question16" class="panel-collapse collapse" style="height: 0px;">
+                        <div class="panel-body">
+
+                            <p class="Call-us-on-91-999-9">Call us on <b>+91 897 195 8284</b>  or Mail us at <b>info@scoolmeal.com</b>  </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--/panel-group-->
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-76864797-1', 'auto');
+  ga('send', 'pageview');
+
+</script>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ca58813ab83e4875b2f1d62da108db12" Name="Diagram1">
+        <EntityTypeShape EntityType="sCoolMealWebDBModel.C__MigrationHistory" Width="1.5" PointX="12.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="sCoolMealWebDBModel.AspNetRole" Width="1.5" PointX="8.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sCoolMealWebDBModel.AspNetUserClaim" Width="1.5" PointX="13.25" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="sCoolMealWebDBModel.AspNetUserLogin" Width="1.5" PointX="13.25" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sCoolMealWebDBModel.AspNetUser" Width="1.5" PointX="11" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sCoolMealWebDBModel.sysdiagram" Width="1.5" PointX="14.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="sCoolMealWebDBModel.tbl_Address" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="sCoolMealWebDBModel.tbl_AddressType" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sCoolMealWebDBModel.tbl_AgeGroup" Width="1.5" PointX="3.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="sCoolMealWebDBModel.tbl_Area" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="sCoolMealWebDBModel.tbl_ChildDetails" Width="1.5" PointX="6" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sCoolMealWebDBModel.tbl_CouponCategory" Width="1.5" PointX="12.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="sCoolMealWebDBModel.tbl_Discount" Width="1.5" PointX="15" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="sCoolMealWebDBModel.tbl_Feedback" Width="1.5" PointX="7.75" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="sCoolMealWebDBModel.tbl_Holidays" Width="1.5" PointX="5.25" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sCoolMealWebDBModel.tbl_Order" Width="1.5" PointX="8.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="sCoolMealWebDBModel.tbl_OrderType" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="sCoolMealWebDBModel.tbl_PackageDetails" Width="1.5" PointX="6" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="sCoolMealWebDBModel.tbl_ParentDetails" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sCoolMealWebDBModel.tbl_PaymentDetails" Width="1.5" PointX="0.75" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="sCoolMealWebDBModel.tbl_PaymentModeType" Width="1.5" PointX="0.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="sCoolMealWebDBModel.tbl_Scheduler" Width="1.5" PointX="10.5" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="sCoolMealWebDBModel.tbl_SchoolDetails" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <AssociationConnector Association="sCoolMealWebDBModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="sCoolMealWebDBModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="sCoolMealWebDBModel.FK_tbl_Address_tbl_AddressType" ManuallyRouted="false" />
+        <AssociationConnector Association="sCoolMealWebDBModel.FK_tbl_Address_tbl_Area" ManuallyRouted="false" />
+        <AssociationConnector Association="sCoolMealWebDBModel.FK_tbl_Address_tbl_ParentDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="sCoolMealWebDBModel.FK_tbl_ChildDetails_tbl_ChildDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="sCoolMealWebDBModel.FK_tbl_PackageDetails_tbl_AgeGroup" ManuallyRouted="false" />
+        <AssociationConnector Association="sCoolMealWebDBModel.FK_tbl_SchoolDetails_tbl_AreaList" ManuallyRouted="false" />
+        <AssociationConnector Association="sCoolMealWebDBModel.FK_tbl_ChildDetails_tbl_ParentDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="sCoolMealWebDBModel.FK_tbl_ChildDetails_tbl_ParentDetails1" ManuallyRouted="false" />
+        <AssociationConnector Association="sCoolMealWebDBModel.FK_tbl_Order_tbl_ChildDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="sCoolMealWebDBModel.FK_tbl_Scheduler_tbl_ChildDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="sCoolMealWebDBModel.FK_tbl_Discount_tbl_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="sCoolMealWebDBModel.FK_tbl_Holidays_tbl_SchoolDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="sCoolMealWebDBModel.FK_tbl_Order_tbl_OrderType" ManuallyRouted="false" />
+        <AssociationConnector Association="sCoolMealWebDBModel.FK_tbl_Order_tbl_PackageDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="sCoolMealWebDBModel.FK_tbl_Order_tbl_ParentDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="sCoolMealWebDBModel.FK_tbl_Scheduler_tbl_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="sCoolMealWebDBModel.FK_tbl_SchoolDetails_tbl_PaymentModeType" ManuallyRouted="false" />
+        <AssociationConnector Association="sCoolMealWebDBModel.AspNetUserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

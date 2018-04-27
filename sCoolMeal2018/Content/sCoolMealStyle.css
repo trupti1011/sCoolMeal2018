@@ -1,0 +1,1140 @@
+﻿/*Layout Page Styles*/
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #FAFAFA;
+}
+
+.container {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.homeHeader {
+    height: 80px;
+    background-color: white;
+    border: none;
+    box-shadow: 0 1px 1px 0 #d8d8d8;
+}
+
+div.contactimage {
+    position: fixed;
+    bottom: 25px;
+    left: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+.topnav > li > a {
+    font-family: Lato;
+    font-size: 14px;
+    color: #9b9b9b;
+    margin-top: 20px;
+    border-color: none;
+    background-color: none;
+    border: none;
+    background: none;
+}
+
+    .topnav > li > a:hover,
+    .topnav > li > a:focus,
+    .topnav > li > a:active {
+        color: #4a4a4a;
+        font-weight: bold;
+    }
+
+.wordmarkimg {
+    width: 149px;
+    height: 77px;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    border: none;
+}
+.SIGN-IN {
+    width: 87px;
+    height: 29px;
+    font-family: Lato;
+    font-size: 24px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #9b9b9b;
+}
+.REGISTER {
+    width: 111px;
+    height: 29px;
+    font-family: Lato;
+    font-size: 24px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+}
+
+/*Home Page Styles*/
+.regbtn {
+    width: 133px;
+    height: 37px;
+    border-radius: 5px;
+    background-color: #47d7ac;
+    border: solid 1px #47d7ac;
+    color: #ffffff;
+    font-size: 14px;
+    font-family: Lato;
+    text-align: center;
+}
+
+    .regbtn:hover {
+        color: #ffffff;
+        background-color: #47d7ac;
+        border: #47d7ac solid 1px;
+        box-shadow: 0 0 2px 1px #47d7ac;
+    }
+
+    .regbtn:focus,
+    .regbtn:active {
+        color: #ffffff;
+        background-color: #47d7ac;
+        border: #47d7ac solid 1px;
+        box-shadow: 0 0 2px 1px #47d7ac;
+    }
+
+
+
+.orngbtn {
+    border-radius: 5px;
+    background-color: #ffb71b;
+    border: solid 1px #ffb71b;
+    color: #ffffff !important;
+    font-size: 24px;
+    font-weight: 900;
+    text-align: center;
+    font-family: Lato;
+}
+
+    .orngbtn:hover {
+        color: #ffffff;
+        background-color: #ffb71b;
+        border: #ffb71b solid 1px;
+        box-shadow: 0 0 2px 1px #ffb71b;
+    }
+
+    .orngbtn:focus,
+    .orngbtn:active {
+        color: #ffffff;
+        background-color: #ffb71b;
+        border: #ffb71b solid 1px;
+        box-shadow: 0 0 2px 1px #ffb71b;
+    }
+
+
+
+.orngsmbtn {
+    width: 60px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #ffb71b;
+    border: solid 1px #ffb71b;
+    color: #ffffff !important;
+    font-size: 18px;
+    font-weight: 300;
+    text-align: center;
+    font-family: Lato;
+}
+
+    .orngsmbtn:hover {
+        color: #ffffff;
+        background-color: #ffb71b;
+        border: #ffb71b solid 1px;
+        box-shadow: 0 0 2px 1px #ffb71b;
+    }
+
+    .orngsmbtn:focus,
+    .orngsmbtn:active {
+        color: #ffffff;
+        background-color: #ffb71b;
+        border: #ffb71b solid 1px;
+        box-shadow: 0 0 2px 1px #ffb71b;
+    }
+
+.grnlgbtn {
+    width: 100%;
+    max-width: 100%;
+    height: 60px;
+    border-radius: 5px;
+    background-color: #47d7ac;
+    border: solid 1px #47d7ac;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 900;
+    text-align: center;
+    font-family: Lato;
+}
+
+    .grnlgbtn:hover {
+        color: #ffffff;
+        background-color: #47d7ac;
+        border: #47d7ac solid 1px;
+        box-shadow: 0 0 2px 1px #ffb71b;
+    }
+
+    .grnlgbtn:focus,
+    .grnlgbtn:active {
+        color: #ffffff;
+        background-color: #47d7ac;
+        border: #47d7ac solid 1px;
+        box-shadow: 0 0 2px 1px #ffb71b;
+    }
+
+.girl {
+    width: 106px;
+    height: 138px;
+    z-index: 1;
+    position: fixed;
+}
+
+.boy {
+    width: 106px;
+    height: 138px;
+    margin-left: 40px;
+}
+
+
+
+.Daily-nutritional-re {
+    margin-top: 115px;
+    font-family: Comfortaa;
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 1.33;
+    color: #000000;
+}
+
+.Simple-meal-subscrip {
+    font-family: Lato;
+    font-size: 24px;
+    text-align: center;
+    color: #9b9b9b;
+}
+
+.progressbartext {
+    margin-left: 0;
+    font-family: lato;
+    font-size: 14px;
+    color: #4a4a4a;
+}
+
+.bs-wizard {
+    width: 100%;
+    margin: auto;
+}
+
+    .bs-wizard > .bs-wizard-step {
+        padding: 0;
+        position: relative;
+    }
+
+        .bs-wizard > .bs-wizard-step > .bs-wizard-dot {
+            position: absolute;
+            width: 54px;
+            height: 54px;
+            display: block;
+            background: #ffffff;
+            left: 50%;
+            margin-top: -25px;
+            margin-left: -15px;
+            border-radius: 50%;
+            padding-top: 0;
+        }
+
+            .bs-wizard > .bs-wizard-step > .bs-wizard-dot:after {
+                content: ' ';
+                width: 18px;
+                height: 18px;
+                background: #f3ea5d;
+                border-radius: 50%;
+                position: absolute;
+                top: 18px;
+                left: 18px;
+                padding-top: 0;
+            }
+
+
+
+
+/*Register page Styles*/
+.Dont-have-an-accoun {
+    height: 15px;
+    font-family: Lato;
+    font-size: 12px;
+    text-align: right;
+    color: #4a4a4a;
+    margin-top: 4px;
+}
+
+    .Dont-have-an-accoun .text-style-1 {
+        color: #47d7ac;
+    }
+
+.maskImg {
+    opacity: 0.2 !important;
+}
+
+.Welcome-back-please {
+    font-family: Lato;
+    font-size: 32px;
+    font-weight: 900;
+    color: #d8d8d8;
+    text-align: center;
+}
+
+
+.form-control {
+    background-color: transparent;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: solid 1px #d8d8d8;
+    border-bottom-width:1px;
+    border-radius: 0;
+    height: auto;
+    box-shadow: none;
+    max-width: 100%;
+    font-family: Lato;
+    font-size: 16px;
+    font-weight: 300;
+    color: #000000;
+    margin-right: 0;
+    margin-left: 0;
+    text-wrap: none;
+    padding: 0;
+}
+
+
+.redio-color {
+    color: #47d7ac;
+    border: solid 1px #47d7ac;
+}
+
+.form-control-label {
+    font-family: Lato;
+    font-size: 16px;
+    font-weight: 300;
+    color: #000000;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.form-control:focus {
+    background-color: transparent;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: solid 1px #d8d8d8;
+    border-radius: 0;
+    height: 25px;
+    box-shadow: none;
+    max-width: 100%;
+    width: 100%;
+    text-wrap: none;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+
+
+/*Internal Layout Styles*/
+.inthomeHeader {
+    background-color: white;
+    /*border: none;*/
+    box-shadow: 0 1px 1px 0 #d8d8d8;
+    height: 60px;
+    margin-bottom: 0;
+}
+
+
+    .inthomeHeader.navright > li > a,
+    .inthomeHeader.navright .open > li > a {
+        background: none;
+        background-color: red;
+        border-color: none;
+        border: none;
+        outline: none;
+    }
+
+
+.identityNav.navright > li > a :hover, .identityNav.navright > li > a :focus, .identityNav.navright > li > a :active {
+    background: none;
+    background-color: none;
+    border-color: none;
+    border: none;
+    outline: none;
+}
+
+.identityNav.navright > li > input :hover,
+.identityNav.navright > li > input :focus,
+.identityNav.navright > li > input :active,
+.dropdown > li > a:hover,
+.dropdown > li > a:focus,
+.dropdown > li > a:active {
+    background: none;
+    background-color: none;
+    border-color: none;
+    border: none;
+    outline: none;
+}
+
+.Get-a-taste-of-sCool {
+    width: 306px;
+    height: 32px;
+    font-family: Comfortaa;
+    font-size: 24px;
+    font-weight: 300;
+    color: #4a4a4a;
+    margin-top: 27px;
+    margin-bottom: 27px;
+}
+
+
+.notifications {
+    width: 99px;
+    height: 17px;
+    font-family: Lato;
+    font-size: 14px;
+    color: #4a4a4a;
+}
+
+
+.smltxt {
+    font-family: Lato;
+    font-size: 12px;
+    color: #4a4a4a;
+}
+/*Footer*/
+.btmnv {
+    border-color: none;
+    border: none;
+    background: none;
+    background-color: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bottomnav > li > a {
+    font-family: Lato;
+    font-size: 14px;
+    color: #4a4a4a;
+    border-color: none;
+    background-color: none;
+    border: none;
+    background: none;
+}
+
+
+    .bottomnav > li > a:hover,
+    .bottomnav > li > a:focus,
+    .bottomnav > li > a:active {
+        border-color: none;
+        background-color: none;
+        background: none;
+        padding: 0;
+        text-decoration: none;
+        color: #4a4a4a;
+        font-weight: bold;
+    }
+
+.Follow-us-on {
+    font-family: Lato;
+    font-size: 24px;
+    font-weight: 900;
+    color: #d8d8d8;
+    text-align: center;
+}
+
+.Logo_without_border {
+    width: 131px;
+    height: 131px;
+    object-fit: contain;
+    margin-bottom: -65px;
+}
+
+.Logowithoutborder {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: -65px;
+}
+
+.A-Stanford-Ignite-Al {
+    width: 177px;
+    height: 15px;
+    font-family: Lato;
+    font-size: 12px;
+    text-align: center;
+    color: #9b9b9b;
+    margin-top: 85px;
+    margin-bottom: 0;
+}
+
+.sCoolMeal-Food-Ventu {
+    font-family: Lato;
+    font-size: 12px;
+    color: #9b9b9b;
+    text-decoration: none;
+}
+
+    .sCoolMeal-Food-Ventu:hover {
+        text-decoration: none;
+    }
+/* for FAQs Page*/
+.Frequently-asked-que {
+    font-family: Lato;
+    font-size: 24px;
+    font-weight: bold;
+    color: #9b9b9b;
+}
+
+.Rectangle-15 {
+    width: 940px;
+    height: 982px;
+    background-color: #ffffff;
+}
+
+.MD-Medium-Desktop-992px-to-1199px-FAQs {
+    width: 1280px;
+    height: 1586px;
+    background-color: #fafafa;
+}
+
+.Type-question {
+    width: 87px;
+    height: 17px;
+    font-family: Lato;
+    font-size: 14px;
+    color: #000000;
+}
+
+.Call-us-on-91-999-9 {
+    width: 520px;
+    height: 29px;
+    font-family: Lato;
+    font-size: 20px;
+    color: #4a4a4a;
+}
+
+.Still-have-questions {
+    width: 212px;
+    height: 29px;
+    font-family: Lato;
+    font-size: 20px;
+    color: #4a4a4a;
+}
+
+.Question {
+    width: 940px;
+    height: 59px;
+    float: none;
+    display: block;
+    margin: 0 auto;
+}
+
+/*Why Subscribe*/
+
+
+.I-love-the-way-sCoo {
+    height: auto;
+    font-family: Comfortaa;
+    font-size: 32px;
+    font-weight: 300;
+    text-align: center;
+    color: #000000;
+}
+
+.Mr-Kamal-Riyas {
+    height: auto;
+    font-family: Lato;
+    font-size: 24px;
+    text-align: center;
+    color: #9b9b9b;
+}
+
+.Rectangle {
+    width: 65px;
+    height: 65px;
+    border-radius: 10px;
+}
+
+.Shape {
+    width: 39.7px;
+    height: 26.7px;
+    background-color: #0060ff;
+}
+
+.Oval {
+    width: 30px;
+    height: 30px;
+    background-color: #47d7ac;
+}
+
+.Completely-vegetaria {
+    height: auto;
+    font-family: Lato;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+    color: #000000;
+}
+
+.As-seen-on {
+    height: auto;
+    font-family: Lato;
+    font-size: 24px;
+    font-weight: 900;
+    color: #d8d8d8;
+}
+
+.MD-Medium-Desktop-992px-to-1199px-Why-subscribe {
+    width: 1280px;
+    height: 2198px;
+    background-color: #fafafa;
+}
+
+.The-collapse-of-the {
+    height: auto;
+    font-family: Lato;
+    font-size: 14px;
+    text-align: center;
+    color: #9b9b9b;
+}
+
+.The_Times_Groupsvg {
+    width: 207.2px;
+    height: 71px;
+}
+
+.px-The_times_of_indiasvg {
+    width: 250px;
+    height: 65.5px;
+}
+
+.TheEconomicTimes {
+    width: 292.5px;
+    height: 27px;
+}
+
+.Indian-Express {
+    width: 270px;
+    height: 75px;
+}
+
+.Rectangle-7 {
+    width: 100%;
+    height: auto;
+    background-color: #ffffff;
+    position: absolute;
+    left: 0;
+}
+
+.Get-a-taste-of-sCool {
+    height: auto;
+    font-family: Comfortaa;
+    font-size: 24px;
+    font-weight: 300;
+    color: #4a4a4a;
+}
+
+.View-sample-menu {
+    height: 16px;
+    font-family: Lato;
+    font-size: 13px;
+    color: #ffffff;
+}
+
+.Order-a-meal {
+    height: 16px;
+    font-family: Lato;
+    font-size: 13px;
+    color: #ffffff;
+}
+
+.Rectangle-13 {
+    text-decoration: none;
+    height: auto;
+    border-radius: 5px;
+    background-color: #47d7ac;
+}
+
+.Rectangle-13-Copy {
+    text-decoration: none;
+    height: auto;
+    border-radius: 5px;
+    background-color: #ffb81b;
+}
+
+/*About*/
+
+.Nurturing-a-healthy {
+    height: auto;
+    font-family: Comfortaa;
+    font-size: 25px;
+    font-weight: 300;
+    color: #000000;
+}
+
+.HISTORY-MISSION {
+    height: auto;
+    font-family: Lato;
+    font-size: 24px;
+    color: #9b9b9b;
+}
+
+.PEOPLE {
+    width: 89px;
+    height: auto;
+    font-family: Lato;
+    font-size: 24px;
+    color: #9b9b9b;
+}
+
+.sCoolMeal-provides-f {
+    height: auto;
+    font-family: Lato;
+    font-size: 16px;
+    line-height: 1.69;
+    color: #4a4a4a;
+}
+
+.Bhavana-Adarsha {
+    text-align: center;
+    height: auto;
+    font-family: Lato;
+    font-size: 16px;
+    font-weight: 300;
+    color: #000000;
+}
+
+.Chief-Happiness-Offi {
+    text-align: center;
+    height: auto;
+    font-family: Lato;
+    font-size: 12px;
+    color: #9b9b9b;
+}
+
+.PARTNERS-ASSOCIATI {
+    height: auto;
+    font-family: Lato;
+    font-size: 24px;
+    color: #9b9b9b;
+}
+
+.Incubated-under-CFTR {
+    font-family: Lato;
+    font-size: 20px;
+    font-weight: 900;
+    text-align: center;
+    color: #9b9b9b;
+}
+
+
+.We-are-an-Incubatee {
+    height: auto;
+    font-family: Lato;
+    font-size: 14px;
+    text-align: center;
+    color: #9b9b9b;
+    text-align: justify;
+}
+
+.Rectangle-2 {
+    width: 100%;
+    background-color: #ffffff;
+}
+
+/* Subscription Plans*/
+.A-subscription-for-e {
+    height: auto;
+    font-family: Comfortaa;
+    font-size: 36px;
+    font-weight: 300;
+    text-align: center;
+    color: #000000;
+}
+
+.dropdown {
+    border: none;
+    width: 617px;
+    height: 40px;
+    background-color: #ffffff;
+    padding: 0;
+    max-width: 100%;
+    text-align: center;
+    font-family: Lato;
+    font-size: 14px;
+    color: #4a4a4a;
+}
+
+
+.Select-the-current-a {
+    width: 881.5px;
+    height: 29px;
+    font-family: Lato;
+    font-size: 24px;
+    text-align: center;
+    color: #9b9b9b;
+}
+
+.Select-a-subscriptio {
+    font-family: Lato;
+    font-size: 32px;
+    font-weight: 900;
+    color: #47d7ac;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 64px;
+}
+
+.day-plan-red {
+    width: 123px;
+    height: 29px;
+    font-family: Lato;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff4f55;
+}
+
+.day-plan-yellow {
+    width: 123px;
+    height: 29px;
+    font-family: Lato;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffb510;
+}
+
+.day-plan-green {
+    width: 150px;
+    height: 29px;
+    font-family: Lato;
+    font-size: 24px;
+    font-weight: bold;
+    color: #47d7ac;
+}
+
+.Meal-a-day {
+    font-family: Lato;
+    font-size: 24px;
+    font-weight: bold;
+    color: #4a4a4a;
+    border: none;
+}
+
+.sel_subscriptipn_tble > thead > tr > th, .sel_subscriptipn_tble > tbody > tr > th, .sel_subscriptipn_tble > tbody > tr > td {
+    border: none;
+    text-align: center;
+}
+
+
+
+.btnsubs {
+    width: 212px;
+    height: 52px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #4a4a4a;
+    font-size: 16px;
+    text-align: center;
+    font-family: Lato;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+    .btnsubs:hover {
+        background-color: #47d7ac;
+        color: #4a4a4a;
+        border: #47d7ac solid 1px;
+        box-shadow: 0 0 2px 1px #ffb71b;
+    }
+
+    .btnsubs:focus,
+    .btnsubs:active {
+        background-color: #47d7ac;
+        color: #4a4a4a;
+        border: #47d7ac solid 1px;
+        box-shadow: 0 0 2px 1px #ffb71b;
+    }
+/*Confirm Order Page*/
+.Order-Summary {
+    font-family: Lato;
+    font-size: 24px;
+    font-weight: 900;
+    color: #47d7ac;
+}
+
+.for {
+    margin-left: 64px;
+    margin-top: 10px;
+    font-family: Lato;
+    color: #898989;
+    font-size: 16px;
+}
+
+/*Dashboard page styles*/
+.MenuImgWhite {
+    width: 180px;
+    height: auto;
+    background-color: #ffffff;
+    border: 1px solid #d8d8d8;
+    font-family: Lato;
+    font-size: 16px;
+    font-weight: 300;
+    color: #4a4a4a;
+}
+
+.EnrollChild {
+    font-family: Lato;
+    font-size: 32px;
+    font-weight: 900;
+    color: #d8d8d8;
+    text-align: center;
+}
+
+.Rectangle-19-Copy-3 {
+    width: 292px;
+    height: 292px;
+    position: absolute;
+    text-align: center;
+}
+
+.Rectangle-6 {
+    width: auto;
+    height: 26px;
+    background-color: #ffffff;
+    box-shadow: 1px 0 1px 0 #ffffff;
+}
+
+.dashboardnav {
+    margin-left: 20%;
+}
+
+
+
+.Purchase-tuck-shop-c {
+    font-family: Lato;
+    font-size: 16px;
+    text-align: center;
+    color: #000000;
+}
+
+/*Purchase Tuck Shop Coupons*/
+.Tuck-shop-coupon-boo {
+    text-align: center;
+    height: auto;
+    font-family: Lato;
+    font-size: 32px;
+    font-weight: 900;
+    color: #47d7ac;
+}
+
+.-booklet-30-coupon {
+    height: auto;
+    font-family: Lato;
+    font-size: 22px;
+    color: #000000;
+}
+
+.Select-Quantity {
+    height: auto;
+    font-family: Lato;
+    font-size: 12px;
+    color: #000000;
+}
+
+.Rectangle-21 {
+    width: 122px;
+    height: 42px;
+    border: none;
+    background-color: #47d7ac;
+}
+
+.Total-Rs-2000-Disc {
+    font-family: Lato;
+    font-size: 18px;
+    text-align: right;
+    color: #4a4a4a;
+}
+
+.Grand-Total {
+    font-family: Lato;
+    font-size: 24px;
+    font-weight: bold;
+    color: #3ed19c;
+}
+
+
+
+.Rectangle-btn {
+    width: auto;
+    height: auto;
+    border-radius: 3px;
+    background-color: #47d7ac;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.Tuck-shop-coupons-a {
+    width: 742px;
+    height: 15px;
+    font-family: Lato;
+    font-size: 12px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.Rectangle-20 {
+    width: 1280px;
+    height: 747px;
+    background-color: #ffffff;
+}
+
+.Line-Copy-2 {
+    width: 890px;
+    height: 3px;
+    border: solid 1px #d8d8d8;
+}
+
+/*Enroll a Child*/
+.Enroll-your-child-by {
+    width: auto;
+    height: auto;
+    font-family: Lato;
+    font-size: 30px;
+    font-weight: 900;
+    color: #d8d8d8;
+}
+
+.Enroll-a-child {
+    width: auto;
+    height: auto;
+    font-family: Lato;
+    font-size: 14px;
+    text-align: center;
+    color: #4a4a4a;
+}
+
+.Rectangle-6 {
+    background-color: #ffffff;
+    box-shadow: 1px 0 1px 0 #ffffff;
+    text-align: center;
+}
+
+.Dropdown {
+    height: 25px;
+}
+
+
+
+.Field {
+    margin-left: -12px;
+    font-family: Lato;
+    font-size: 16px;
+    font-weight: 300;
+    color: gray;
+}
+
+.Female {
+    width: 50px;
+    height: 19px;
+    font-family: Lato;
+    font-size: 16px;
+    font-weight: 300;
+    color: #4a4a4a;
+}
+
+.Rectangle-14 {
+    width: 456px;
+    height: auto;
+    border-radius: 5px;
+    background-color: #47d7ac;
+}
+
+.Talktous {
+    width: 60px;
+    height: 65px;
+    object-fit: contain;
+}
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    background-color: rgba(242, 242, 242,.5);
+    z-index: 999999;
+}
+
+@media only screen and (max-width: 800px) {
+    .no-more-tables table,
+    .no-more-tables thead,
+    .no-more-tables tbody,
+    .no-more-tables th,
+    .no-more-tables td,
+    .no-more-tables tr {
+        display: block;
+    }
+
+        .no-more-tables thead tr {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+
+    .no-more-tables tr {
+        border: 1px solid #ccc;
+    }
+
+    .no-more-tables td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+        white-space: normal;
+        text-align: left;
+    }
+
+        .no-more-tables td:before {
+            /* Now like a table header */
+            position: absolute;
+            /* Top/left values mimic padding */
+            top: 6px;
+            left: 6px;
+            width: 45%;
+            padding-right: 10px;
+            white-space: nowrap;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .no-more-tables td:before {
+            content: attr(data-title);
+        }
+
+        .no-more-tables td a {
+            text-align: right;
+        }
+}

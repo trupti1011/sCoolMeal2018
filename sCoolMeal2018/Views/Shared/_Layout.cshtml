@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sCoolMeal</title>
+    @Styles.Render("~/Content/css")
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Give+You+Glory' rel='stylesheet' type='text/css'>
+    <link href="~/Content/sCoolMealStyle.css" rel="stylesheet" />
+</head>
+<body style="margin:0 0 0 0;width:100%">
+    <nav class="navbar navbar-default navbar-fixed-top homeHeader">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button id="navbar-hamburger" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <button id="navbar-close" class="navbar-toggle hidden" type="button">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </button>
+                <a class="navbar-brand" href="@Url.Action("Index", "Home")" style="width: 150px;height: 70px;"><img class="img-responsive" src="~/Images/Wordmark-no-background.png" alt="sCoolMeal"></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="background-color:#fff">
+                <ul class="nav navbar-nav topnav">
+                    <li><a href="@Url.Action("Index","Home")">Home</a></li>
+                    <li><a href="@Url.Action("WhySubscribe","Home")">Why Subscribe</a></li>
+                    @*<li><a href="@Url.Action("SubscriptionPlans","Home")">Subscription Plans</a></li>*@
+                    <li class="dropdown" style="width:auto;">
+                        <a href="#" class="dropdown-toggle pull-left" data-toggle="dropdown" aria-expanded="false">About Us<span class="caret"></span></a>
+                        <ul class="dropdown-menu pull-right" role="menu">
+                            <li><a href="@Url.Action("About","Home")" class="navbar-link" tabindex="-1">About us</a></li>
+                            @*<li><a href="@Url.Action("ContactUs","Home")" class="navbar-link" tabindex="-1">Contact us</a></li>*@
+                            <li><a href="@Url.Action("FAQ","Home")" class="navbar-link" tabindex="-1">FAQs</a></li>
+                            <li><a href="~/pdf/TermsofUse.pdf" target="_blank" class="navbar-link" tabindex="-1">Terms of Use</a></li>
+                            <li><a href="~/pdf/PrivacyPolicy.pdf" target="_blank" class="navbar-link" tabindex="-1">Privacy Policy</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">On Demand <span style="color:red;text-decoration:underline">new</span></a></li>
+                    @*<li><a href="@Url.Action("Product","Home")">Products</a></li>
+                        <li><a href="@Url.Action("Events","Home")">Events</a></li>*@
+                    <li><a href="https://scoolmeal.blog" target="_blank">Blog</a></li>
+                    @*<li>@Html.ActionLink("Role","Index","Role")</li>*@
+                </ul>
+                <form class="navbar-form navbar-right">
+                    <a class="btn regbtn" href="@Url.Action("Login", "Account")" style="margin-top:15px;margin-right:15px">Sign in/Register</a>
+                </form>
+
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="container" style="height:auto;width:100%">
+
+        @RenderBody()
+
+        @*<div class="contactimage" style="margin-bottom:30px;">
+                <div id="contactUS" style="background-color:#ffffff;font-family:Lato;box-shadow: 1px 1px 1px #d8d8d8;border:1px solid #d8d8d8;display:none">
+
+                </div>
+                <div class="text-center">
+                    <a href="https://api.whatsapp.com/send?phone=918971958284" id="scoolman" style="text-decoration:none;" target="_blank">
+                        <span class="contact-icon" style="font-size:50px;">
+                            <i class="fa fa-whatsapp" style="color:#47d7ac"></i>
+                        </span>
+                    </a>
+                </div>
+                <h4>WhatsApp us</h4>
+
+            </div>*@
+
+        @*<div id="loaderDiv" class="preloader">
+                <img src="~/Images/5.gif" style="top:50%;left:50%;position : absolute;z-index : 101;margin-left : -16px;margin-top : -16px;" />
+            </div>*@
+
+        <footer>
+            <div class="row" style="text-align:center;margin-left:0;margin-right:0">
+                <div class="Follow-us-on">Follow us on</div>
+                <div style="margin-top:23px;margin-bottom:63px;">
+                    <span style="margin-right:30px;">
+                        <a href="https://www.facebook.com/sCoolMeal" target="_blank"><img style="width:50px;height:50px;color:#47d7ac;" src="~/Images/facebook.png" alt="Facebook" /></a>
+                    </span>
+                    <span style="margin-right:30px;">
+                        <a href="https://play.google.com/store/apps/details?id=scoolmeal.com.scoolmeal" target="_blank"><img src="~/Images/badge_new.png" alt="sCoolMeal" /></a>
+                    </span>
+                    <span>
+                        <a href="https://twitter.com/sCoolMealIndia" target="_blank"><img style="width:50px;height:50px;color:#47d7ac;" src="~/Images/twitter.png" alt="Twiiter" /></a>
+                    </span>
+                </div>
+                <img src="~/Images/Logo_without_border.svg" class="img-responsive Logo_without_border center-block" alt="sCoolMeal" />
+            </div>
+            <div style="background-color:#ffffff;width:100%;">
+
+                <div class="row">
+                    <div class="A-Stanford-Ignite-Al center-block">
+                        A Stanford Ignite Alumni Venture<br />
+                        Incubatee at CFTRI-KBITS
+                    </div>
+
+                </div>
+                @*<div class="row" style="margin-top:18px;">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8">
+                    <nav class="navbar navbar-default btmnv">
+                        <div>
+                            <div class="navbar-header pull-left" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <button type="button" class="navbar-toggle collapsed navbar-toggle-center" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="glyphicon glyphicon-menu-hamburger"></span>
+                                    <span class="navmenu">MENU</span>
+                                </button>
+                            </div>
+                            <div class="collapse navbar-collapse navbar-nav-justified" id="bs-example-navbar-collapse-1">
+                                <ul class="nav nav-pills nav-justified bottomnav">
+                                    <li><a href="@Url.Action("Index","Home")">Home</a></li>
+                                    <li><a href="@Url.Action("WhySubscribe","Home")">Why Subscribe</a></li>
+                                    <li><a href="@Url.Action("SubscriptionPlans","Home")">Pricing Plans</a></li>
+                                    <li><a href="@Url.Action("About","Home")">About Us</a></li>
+                                    <li><a href="@Url.Action("ContactUs","Home")">Contact us</a></li>
+                                    <li><a href="@Url.Action("FAQ","Home")">FAQ</a></li>
+                                    <li><a href="~/pdf/TermsofUse.pdf" target="_blank">Terms of Use</a></li>
+                                    <li><a href="~/pdf/PrivacyPolicy.pdf" target="_blank">Privacy Policy</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <div class="col-lg-2"></div>
+            </div>*@
+                <br /><br />
+                <div class="row" style="margin-right:14px;">
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-4 text-center">
+                        <a href="/" class=" sCoolMeal-Food-Ventu">sCoolMeal FoodVentures Pvt Ltd</a>
+                        <br><p class=" sCoolMeal-Food-Ventu">197/293-3, 32nd Main, BTM 1st Stage, Bangalore 560068</p>
+                    </div>
+                    <div class="col-lg-4"> <a href="http://www.turinglabs.in" class=" sCoolMeal-Food-Ventu" style="float:right" target="_blank">UI-UX by Turing Labs</a></div>
+                </div>
+                <br />
+            </div>
+
+
+
+
+        </footer>
+        
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-76864797-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-76864797-1');
+    </script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //$(window).load(function () {
+            //    $('#loaderDiv').fadeOut(1000);
+            //});
+
+            $(function () {
+                $('.navbar-toggle').click(function () {
+                    $('#navbar-hamburger').toggleClass('hidden');
+                    $('#navbar-close').toggleClass('hidden');
+                });
+            });
+            $(function () {
+                $('#navbar-close').click(function () {
+                    $(".navbar-collapse").collapse('hide');
+
+                });
+            });
+            $("li.dropdown").click(function () {
+                $("nav.navbar").toggleClass("open");
+            });
+        });
+    </script>
+    <style>
+        li a {
+            position: relative;
+            width: inherit;
+        }
+
+        .navbar-nav {
+            margin: 0px;
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,305 @@
+﻿@using Microsoft.AspNet.Identity
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sCoolMeal</title>
+    @Styles.Render("~/Content/css")
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Give+You+Glory' rel='stylesheet' type='text/css'>
+    <link href="~/Content/sCoolMealStyle.css" rel="stylesheet" />
+</head>
+<body style="float:none;overflow-x:hidden">
+    <nav class="navbar navbar-default inthomeHeader" style="border-radius:0px">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button id="navbar-hamburger" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <button id="navbar-close" class="navbar-toggle hidden" type="button">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </button>
+                <a class="navbar-brand" href="@Url.Action("Index","DashBoard")" style="margin-left:22px;font-family: Lato;font-size: 14px;color: #4a4a4a;"><i class="fa fa-home"></i>Home</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            @*<div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1"  >
+                  <ul class="nav navbar-nav navbar-right" style="background-color:#f8f8f8">
+                      <li class="dropdown" style="width:auto;">
+                          <a href="#" class="dropdown-toggle " data-toggle="dropdown" aria-expanded="false" role="button">@User.Identity.Name <span class="caret"></span></a>
+                          <ul class="dropdown-menu" role="menu" style="background-color:#f8f8f8">
+                              <li style="background-color:#f8f8f8">
+                                  @using (Html.BeginForm("LogOff", "Account", FormMethod.Post))
+                                  {
+                                      @Html.AntiForgeryToken()
+                                      <input type="submit" value="Logoff" class="btn btn-link navbar-btn navbar-link" />
+                                  }
+                              </li>
+                          </ul>
+                      </li>
+                  </ul>
+                </div>*@<!-- /.navbar-collapse -->
+            <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
+
+                <ul class="nav navbar-nav navbar-right" style="background-color:#f8f8f8">
+                    <li>
+                        <a href="#" style="text-decoration:none">@User.Identity.Name &nbsp;<i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+                    </li>
+                    <li style="background-color:#f8f8f8">
+                        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
+                            <input type="submit" value="Logoff" class="btn btn-link navbar-btn navbar-link" /><i class="fa fa-sign-out" aria-hidden="true"></i>
+                        }
+                    </li>
+                </ul>
+
+            </div>
+        </div><!-- /.container-fluid -->
+        <div id="Progress" class="progress hidden-sm hidden-xs" style="width:100%;padding:0;margin:0;height:9.7px; background-color:#47d7ac">
+            <div class="progress-bar orange" role="progressbar" style="width: 20%;background-color:#ffb81c;-webkit-transform-origin: 100% 0;-ms-transform-origin: 100% 0;transform-origin: 100% 0;-webkit-transform: skew(-45deg);-ms-transform: skew(-45deg);transform: skew(-45deg); z-index: 1;"></div>
+            <div class="progress-bar red" role="progressbar" style="width: 30%;background-color:#ff585d;-webkit-transform-origin: 100% 0;-ms-transform-origin: 100% 0; transform-origin: 100% 0;-webkit-transform: skew(-45deg);-ms-transform: skew(-45deg); transform: skew(-45deg);z-index: 1;margin-left:-3%"></div>
+            <div class="progress-bar yellow" role="progressbar" style="width:30%;background-color:#f3ea5d;-webkit-transform-origin: 100% 0;-ms-transform-origin: 100% 0;transform-origin: 100% 0;-webkit-transform: skew(-45deg);-ms-transform: skew(-45deg); transform: skew(-45deg);z-index: 1;margin-left:-3%"></div>
+            <div class="progress-bar green" role="progressbar" style="width:20%;background-color:#47d7ac;-webkit-transform-origin:100% 100% ;-ms-transform-origin:100% 100%; transform-origin:100% 100%; -webkit-transform: skew(-45deg);-ms-transform: skew(-45deg);transform: skew(-45deg);z-index: 1; margin-left:-5px"></div>
+        </div>
+    </nav>
+    <div class="container body-content">
+        <br /><br />
+        @RenderBody()
+        
+    </div>
+    <footer class="navbar-fixed-bottom">
+        <div class="row" style="margin-right:14px;">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4 text-center">
+                <a href="/" class=" sCoolMeal-Food-Ventu">sCoolMeal FoodVentures Pvt Ltd</a>
+                <br><p class=" sCoolMeal-Food-Ventu">197/293-3, 32nd Main, BTM 1st Stage, Bangalore 560068</p>
+            </div>
+            <div class="col-lg-4"> <a href="http://www.turinglabs.in" class=" sCoolMeal-Food-Ventu" style="float:right" target="_blank">UI-UX by Turing Labs</a></div>
+        </div>
+    </footer>
+    @*<div id="loaderDiv" class="preloader">
+        <img src="~/Images/5.gif" style="top:50%;left:50%;position : absolute;z-index : 101;margin-left : -16px;margin-top : -16px;" />
+    </div>*@
+    @*<script>
+             !function () {
+                 var t;
+                 if (t = window.driftt = window.drift = window.driftt || [], !t.init) return t.invoked ? void (window.console && console.error && console.error("Drift snippet included twice.")) : (t.invoked = !0,
+                     t.methods = ["identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on"],
+                     t.factory = function (e) {
+                         return function () {
+                             var n;
+                             return n = Array.prototype.slice.call(arguments), n.unshift(e), t.push(n), t;
+                         };
+                     }, t.methods.forEach(function (e) {
+                         t[e] = t.factory(e);
+                     }), t.load = function (t) {
+                         var e, n, o, i;
+                         e = 3e5, i = Math.ceil(new Date() / e) * e, o = document.createElement("script"),
+                             o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + i + "/" + t + ".js",
+                             n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n);
+                     });
+             }();
+             drift.SNIPPET_VERSION = '0.3.1';
+             drift.load('nvbrgt59nae5');
+        </script>*@
+    <div class="contactimage" style="margin-bottom:30px;">
+        <div id="contactUS" style="background-color:#ffffff;font-family:Lato;box-shadow: 1px 1px 1px #d8d8d8;border:1px solid #d8d8d8;display:none">
+
+        </div>
+        <div class="text-center">
+            <a href="https://api.whatsapp.com/send?phone=918971958284" id="scoolman" style="text-decoration:none;" target="_blank">
+                <span class="contact-icon" style="font-size:50px;">
+                    <i class="fa fa-whatsapp" style="color:#47d7ac"></i>
+                </span>
+            </a>
+        </div>
+        <h4>WhatsApp us</h4>
+
+    </div>
+    @*<footer style="margin-bottom:0px;">
+           <div style="background-color:#ffffff">
+
+
+                <div class="row" style="margin-top:18px;">
+                    <div class="col-lg-3"></div>
+                    <div class="col-lg-6">
+                        <nav class="navbar navbar-default btmnv">
+                            <div>
+                                <div class="navbar-header" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                    <button type="button" class="navbar-toggle collapsed navbar-toggle-center" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="glyphicon glyphicon-menu-hamburger"></span>
+                                        <span class="navmenu">MENU</span>
+                                    </button>
+                                </div>
+                                <div class="collapse navbar-collapse navbar-nav-justified" id="bs-example-navbar-collapse-1">
+                                    <ul class="nav nav-pills nav-justified bottomnav">
+                                        <li><a href="@Url.Action("Index","Home")" target="_blank">Home</a></li>
+                                        <li><a href="@Url.Action("WhySubscribe","Home")" target="_blank">Why Subscribe</a></li>
+                                        <li><a href="@Url.Action("SubscriptionPlans","Home")" target="_blank">Pricing Plans</a></li>
+                                        <li><a href="@Url.Action("About","Home")" target="_blank">About Us</a></li>
+                                        <li><a href="@Url.Action("FAQ","Home")" target="_blank">FAQ</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="col-lg-3"></div>
+                </div>
+                <div class="row" style="margin-right:14px;">
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-4 text-center"><a href="@Url.Action("Index","Home")" class=" sCoolMeal-Food-Ventu">sCoolMeal FoodVentures Pvt Ltd</a></div>
+                    <div class="col-lg-4"> <a href="http://www.turinglabs.in" class=" sCoolMeal-Food-Ventu" style="float:right" target="_blank">UI-UX by Turing Labs</a></div>
+                </div>
+                <br />
+            </div>
+        </footer>*@
+    <style>
+        .form-control {
+            background-color: transparent;
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            border-bottom: solid 1px #d8d8d8;
+            border-radius: 0;
+            height: auto;
+            box-shadow: none;
+            max-width: 100%;
+            font-family: Lato;
+            font-size: 16px;
+            font-weight: 300;
+            color: #000000;
+            margin-right: 0;
+            margin-left: 0;
+            text-wrap: none;
+            padding: 0;
+        }
+
+        .body-content {
+            margin-top: 60px;
+        }
+
+            .body-content.open {
+                margin-top: 260px;
+            }
+    </style>
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function () {
+            $("button.navbar-toggle").click(function () {
+                $("#bs-example-navbar-collapse-1").slideToggle();
+                $('.homepage-wrapper').toggleClass("open");
+            });
+            //$('#scoolman').click(function () {
+            //    if ($('#contactUS').is(':visible'))
+            //    {
+            //        $('#contactUS').hide();
+            //    } else {
+            //        $('#SenderName').val("");
+            //        $('#SenderEmail').val("");
+            //        $('#Phone').val("");
+            //        $('#SenderMessage').val("");
+            //        $('#contactUS').show();
+            //    }
+            //});
+            //$('#contactclose').click(function () {
+            //    $('#contactUS').hide();
+            //});
+            $('#contactUSbtn').click(function () {
+                var name = $('#SenderName').val();
+                var email = $('#SenderEmail').val();
+                var phone = $('#Phone').val();
+                var message = $('#SenderMessage').val();
+                $.ajax({
+                    url: '@Url.Action("Contact", "Home")',
+                    data: {"name":name,"email":email,"Phone":phone,"mssg":message },
+                    type: 'POST', // add
+                    success: function (returnmsg) {
+                        $('#contactUS').hide();
+
+                    }
+                });
+            });
+
+            $(window).load(function () {
+                $('#loaderDiv').fadeOut(1000);
+            });
+        });
+        $(function () {
+            $('.navbar-toggle').click(function () {
+                $('#navbar-hamburger').toggleClass('hidden');
+                $('#navbar-close').toggleClass('hidden');
+            });
+        });
+        $(function () {
+            $('#navbar-close').click(function () {
+                $(".navbar-collapse").collapse('hide');
+
+            });
+        });
+        $("li.dropdown").click(function () {
+            $("nav.navbar").toggleClass("open");
+        });
+
+
+        //!function () {
+        //    var t;
+        //    if (t = window.driftt = window.drift = window.driftt || [], !t.init) return t.invoked ? void (window.console && console.error && console.error("Drift snippet included twice.")) : (t.invoked = !0,
+        //        t.methods = ["identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on"],
+        //        t.factory = function (e) {
+        //            return function () {
+        //                var n;
+        //                return n = Array.prototype.slice.call(arguments), n.unshift(e), t.push(n), t;
+        //            };
+        //        }, t.methods.forEach(function (e) {
+        //            t[e] = t.factory(e);
+        //        }), t.load = function (t) {
+        //            var e, n, o, i;
+        //            e = 3e5, i = Math.ceil(new Date() / e) * e, o = document.createElement("script"),
+        //                o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + i + "/" + t + ".js",
+        //                n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n);
+        //        });
+        //}();
+        //drift.SNIPPET_VERSION = '0.3.1';
+        //drift.load('nvbrgt59nae5');
+    </script>
+    <!-- End of Async Drift Code -->
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/jquery-1.12.4.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-76864797-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-76864797-1');
+    </script>
+
+    <style>
+        #borderimg {
+            border: 10px solid transparent;
+            -webkit-border-image: url(~/Images/1.png) 30 stretch;
+            -o-border-image: url(~/Images/1.png) 30 stretch;
+            border-image: url(~/Images/1.png) 30 stretch;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        }
+    </style>
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>

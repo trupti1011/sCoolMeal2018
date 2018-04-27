@@ -1,0 +1,1711 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="sCoolMealWebDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="datetime" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="tbl_Address">
+          <Key>
+            <PropertyRef Name="AddressId" />
+          </Key>
+          <Property Name="AddressId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ParentId" Type="int" Nullable="false" />
+          <Property Name="AreaId" Type="int" Nullable="false" />
+          <Property Name="AddressTypeId" Type="int" Nullable="false" />
+          <Property Name="AddressLine1" Type="nvarchar(max)" />
+          <Property Name="AddressLine2" Type="nvarchar(max)" />
+          <Property Name="Zipcode" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_AddressType">
+          <Key>
+            <PropertyRef Name="AddressTypeId" />
+          </Key>
+          <Property Name="AddressTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AddressType" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="AddressDescription" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_AgeGroup">
+          <Key>
+            <PropertyRef Name="AgeGroupId" />
+          </Key>
+          <Property Name="AgeGroupId" Type="int" Nullable="false" />
+          <Property Name="Class" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="AgeGroupType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_Area">
+          <Key>
+            <PropertyRef Name="AreaId" />
+          </Key>
+          <Property Name="AreaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AreaName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="IsActive" Type="int" Nullable="false" />
+          <Property Name="City" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_ChildDetails">
+          <Key>
+            <PropertyRef Name="ChildId" />
+          </Key>
+          <Property Name="ChildId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PrimaryParentId" Type="int" Nullable="false" />
+          <Property Name="SecondaryParentId" Type="int" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateOfBirth" Type="datetime" />
+          <Property Name="Gender" Type="int" />
+          <Property Name="SchoolId" Type="int" Nullable="false" />
+          <Property Name="Standard" Type="int" Nullable="false" />
+          <Property Name="Division" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="HomeAddressId" Type="nchar" MaxLength="10" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="IsActive" Type="int" Nullable="false" />
+          <Property Name="AgeGroupId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_CouponCategory">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsActive" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="tbl_Discount">
+          <Key>
+            <PropertyRef Name="DiscountId" />
+          </Key>
+          <Property Name="DiscountId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CouponCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DiscountAmout" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="DiscountPercentage" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="DiscountedAmountTillDate" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Validity" Type="datetime" Nullable="false" />
+          <Property Name="CouponDescription" Type="nvarchar" MaxLength="200" />
+          <Property Name="ApplicableCount" Type="int" />
+          <Property Name="IssuedCount" Type="int" />
+          <Property Name="CouponCategory" Type="int" />
+          <Property Name="IsActive" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tbl_Feedback">
+          <Key>
+            <PropertyRef Name="FeedbackId" />
+          </Key>
+          <Property Name="FeedbackId" Type="int" Nullable="false" />
+          <Property Name="ParentId" Type="int" />
+          <Property Name="FeedbackMsg" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CanDisplayFeedback" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_Holidays">
+          <Key>
+            <PropertyRef Name="HolidayId" />
+          </Key>
+          <Property Name="HolidayId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SchoolId" Type="int" Nullable="false" />
+          <Property Name="HolidayDate" Type="datetime" />
+          <Property Name="HolidayName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_Order">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Name="OrderId" Type="int" Nullable="false" />
+          <Property Name="ParentId" Type="int" />
+          <Property Name="ChildId" Type="int" />
+          <Property Name="PackageId" Type="int" />
+          <Property Name="OrderTypeId" Type="int" />
+          <Property Name="MenuId" Type="int" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="OrderComplete" Type="int" Nullable="false" />
+          <Property Name="PurchaseDate" Type="datetime" Nullable="false" />
+          <Property Name="Validity" Type="datetime" />
+          <Property Name="TotalOrderAmount" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="OrderCurrent" Type="int" Nullable="false" />
+          <Property Name="OrderUpdateDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="OrderUpdateReason" Type="nvarchar" MaxLength="200" />
+          <Property Name="PaymentId" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_OrderType">
+          <Key>
+            <PropertyRef Name="OrderTypeId" />
+          </Key>
+          <Property Name="OrderTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+          <Property Name="IsActive" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_PackageDetails">
+          <Key>
+            <PropertyRef Name="PackageId" />
+          </Key>
+          <Property Name="PackageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PackageName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PackageDescription" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="MealCount" Type="int" />
+          <Property Name="WalletAmount" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="AgeGroupId" Type="int" />
+          <Property Name="PerMealCost" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="Validity" Type="int" />
+          <Property Name="Breakfast" Type="int" />
+          <Property Name="Lunch" Type="int" />
+          <Property Name="EveningSnack" Type="int" />
+          <Property Name="AllDayMeal" Type="int" />
+          <Property Name="Wallet" Type="int" />
+          <Property Name="Tuckshop" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_ParentDetails">
+          <Key>
+            <PropertyRef Name="ParentId" />
+          </Key>
+          <Property Name="ParentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="MobileNumber" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="IsActive" Type="int" Nullable="false" />
+          <Property Name="HomeAddressId" Type="int" />
+          <Property Name="Gender" Type="int" />
+          <Property Name="OtherParentMobile" Type="nvarchar" MaxLength="12" />
+        </EntityType>
+        <EntityType Name="tbl_PaymentDetails">
+          <Key>
+            <PropertyRef Name="PaymentId" />
+          </Key>
+          <Property Name="PaymentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PaymentType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TransactionId" Type="nvarchar" MaxLength="100" />
+          <Property Name="OrderAmount" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="TaxAmount" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="TotalOrderAmount" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="PaymentStatus" Type="nvarchar" MaxLength="10" />
+          <Property Name="PaidDate" Type="datetime" />
+          <Property Name="RefundStatus" Type="int" Nullable="false" />
+          <Property Name="RefundType" Type="nvarchar" MaxLength="50" />
+          <Property Name="IssuedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="RefundAmount" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="RefundDate" Type="datetime" />
+          <Property Name="OrderId" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_PaymentModeType">
+          <Key>
+            <PropertyRef Name="PaymentModeId" />
+          </Key>
+          <Property Name="PaymentModeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PaymentModeType" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="tbl_Scheduler">
+          <Key>
+            <PropertyRef Name="SchedulerId" />
+          </Key>
+          <Property Name="SchedulerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ChildId" Type="int" />
+          <Property Name="OrderId" Type="int" />
+          <Property Name="FromDate" Type="datetime" Nullable="false" />
+          <Property Name="ToDate" Type="datetime" Nullable="false" />
+          <Property Name="MealScheduled" Type="int" Nullable="false" />
+          <Property Name="NoOfMealsLeft" Type="int" />
+          <Property Name="WalletAmount" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="Breakfast" Type="int" />
+          <Property Name="Lunch" Type="int" />
+          <Property Name="Snack" Type="int" />
+          <Property Name="MenuId" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_SchoolDetails">
+          <Key>
+            <PropertyRef Name="SchoolId" />
+          </Key>
+          <Property Name="SchoolId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SchoolType" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="SchoolName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="City" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="AreaId" Type="int" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Zipcode" Type="int" Nullable="false" />
+          <Property Name="ContactNumber" Type="nvarchar" MaxLength="15" />
+          <Property Name="ShortBreakTime" Type="nvarchar" MaxLength="10" />
+          <Property Name="LongBreakTime" Type="nchar" MaxLength="10" />
+          <Property Name="TuckShop" Type="int" Nullable="false" />
+          <Property Name="PaymentMode" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Address_tbl_AddressType">
+          <End Role="tbl_AddressType" Type="Self.tbl_AddressType" Multiplicity="1" />
+          <End Role="tbl_Address" Type="Self.tbl_Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_AddressType">
+              <PropertyRef Name="AddressTypeId" />
+            </Principal>
+            <Dependent Role="tbl_Address">
+              <PropertyRef Name="AddressTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Address_tbl_Area">
+          <End Role="tbl_Area" Type="Self.tbl_Area" Multiplicity="1" />
+          <End Role="tbl_Address" Type="Self.tbl_Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Area">
+              <PropertyRef Name="AreaId" />
+            </Principal>
+            <Dependent Role="tbl_Address">
+              <PropertyRef Name="AreaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Address_tbl_ParentDetails">
+          <End Role="tbl_ParentDetails" Type="Self.tbl_ParentDetails" Multiplicity="1" />
+          <End Role="tbl_Address" Type="Self.tbl_Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_ParentDetails">
+              <PropertyRef Name="ParentId" />
+            </Principal>
+            <Dependent Role="tbl_Address">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_ChildDetails_tbl_ChildDetails">
+          <End Role="tbl_AgeGroup" Type="Self.tbl_AgeGroup" Multiplicity="1" />
+          <End Role="tbl_ChildDetails" Type="Self.tbl_ChildDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_AgeGroup">
+              <PropertyRef Name="AgeGroupId" />
+            </Principal>
+            <Dependent Role="tbl_ChildDetails">
+              <PropertyRef Name="AgeGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_ChildDetails_tbl_ParentDetails">
+          <End Role="tbl_ParentDetails" Type="Self.tbl_ParentDetails" Multiplicity="1" />
+          <End Role="tbl_ChildDetails" Type="Self.tbl_ChildDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_ParentDetails">
+              <PropertyRef Name="ParentId" />
+            </Principal>
+            <Dependent Role="tbl_ChildDetails">
+              <PropertyRef Name="PrimaryParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_ChildDetails_tbl_ParentDetails1">
+          <End Role="tbl_ParentDetails" Type="Self.tbl_ParentDetails" Multiplicity="0..1" />
+          <End Role="tbl_ChildDetails" Type="Self.tbl_ChildDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_ParentDetails">
+              <PropertyRef Name="ParentId" />
+            </Principal>
+            <Dependent Role="tbl_ChildDetails">
+              <PropertyRef Name="SecondaryParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Discount_tbl_Category">
+          <End Role="tbl_CouponCategory" Type="Self.tbl_CouponCategory" Multiplicity="0..1" />
+          <End Role="tbl_Discount" Type="Self.tbl_Discount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_CouponCategory">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="tbl_Discount">
+              <PropertyRef Name="CouponCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Holidays_tbl_SchoolDetails">
+          <End Role="tbl_SchoolDetails" Type="Self.tbl_SchoolDetails" Multiplicity="1" />
+          <End Role="tbl_Holidays" Type="Self.tbl_Holidays" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_SchoolDetails">
+              <PropertyRef Name="SchoolId" />
+            </Principal>
+            <Dependent Role="tbl_Holidays">
+              <PropertyRef Name="SchoolId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Order_tbl_ChildDetails">
+          <End Role="tbl_ChildDetails" Type="Self.tbl_ChildDetails" Multiplicity="0..1" />
+          <End Role="tbl_Order" Type="Self.tbl_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_ChildDetails">
+              <PropertyRef Name="ChildId" />
+            </Principal>
+            <Dependent Role="tbl_Order">
+              <PropertyRef Name="ChildId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Order_tbl_OrderType">
+          <End Role="tbl_OrderType" Type="Self.tbl_OrderType" Multiplicity="0..1" />
+          <End Role="tbl_Order" Type="Self.tbl_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_OrderType">
+              <PropertyRef Name="OrderTypeId" />
+            </Principal>
+            <Dependent Role="tbl_Order">
+              <PropertyRef Name="OrderTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Order_tbl_PackageDetails">
+          <End Role="tbl_PackageDetails" Type="Self.tbl_PackageDetails" Multiplicity="0..1" />
+          <End Role="tbl_Order" Type="Self.tbl_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_PackageDetails">
+              <PropertyRef Name="PackageId" />
+            </Principal>
+            <Dependent Role="tbl_Order">
+              <PropertyRef Name="PackageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Order_tbl_ParentDetails">
+          <End Role="tbl_ParentDetails" Type="Self.tbl_ParentDetails" Multiplicity="0..1" />
+          <End Role="tbl_Order" Type="Self.tbl_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_ParentDetails">
+              <PropertyRef Name="ParentId" />
+            </Principal>
+            <Dependent Role="tbl_Order">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_PackageDetails_tbl_AgeGroup">
+          <End Role="tbl_AgeGroup" Type="Self.tbl_AgeGroup" Multiplicity="0..1" />
+          <End Role="tbl_PackageDetails" Type="Self.tbl_PackageDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_AgeGroup">
+              <PropertyRef Name="AgeGroupId" />
+            </Principal>
+            <Dependent Role="tbl_PackageDetails">
+              <PropertyRef Name="AgeGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Scheduler_tbl_ChildDetails">
+          <End Role="tbl_ChildDetails" Type="Self.tbl_ChildDetails" Multiplicity="0..1" />
+          <End Role="tbl_Scheduler" Type="Self.tbl_Scheduler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_ChildDetails">
+              <PropertyRef Name="ChildId" />
+            </Principal>
+            <Dependent Role="tbl_Scheduler">
+              <PropertyRef Name="ChildId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Scheduler_tbl_Order">
+          <End Role="tbl_Order" Type="Self.tbl_Order" Multiplicity="0..1" />
+          <End Role="tbl_Scheduler" Type="Self.tbl_Scheduler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Order">
+              <PropertyRef Name="OrderId" />
+            </Principal>
+            <Dependent Role="tbl_Scheduler">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_SchoolDetails_tbl_AreaList">
+          <End Role="tbl_Area" Type="Self.tbl_Area" Multiplicity="1" />
+          <End Role="tbl_SchoolDetails" Type="Self.tbl_SchoolDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Area">
+              <PropertyRef Name="AreaId" />
+            </Principal>
+            <Dependent Role="tbl_SchoolDetails">
+              <PropertyRef Name="AreaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_SchoolDetails_tbl_PaymentModeType">
+          <End Role="tbl_PaymentModeType" Type="Self.tbl_PaymentModeType" Multiplicity="1" />
+          <End Role="tbl_SchoolDetails" Type="Self.tbl_SchoolDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_PaymentModeType">
+              <PropertyRef Name="PaymentModeId" />
+            </Principal>
+            <Dependent Role="tbl_SchoolDetails">
+              <PropertyRef Name="PaymentMode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="sCoolMealWebDBModelStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Address" EntityType="Self.tbl_Address" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_AddressType" EntityType="Self.tbl_AddressType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_AgeGroup" EntityType="Self.tbl_AgeGroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Area" EntityType="Self.tbl_Area" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_ChildDetails" EntityType="Self.tbl_ChildDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_CouponCategory" EntityType="Self.tbl_CouponCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Discount" EntityType="Self.tbl_Discount" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Feedback" EntityType="Self.tbl_Feedback" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Holidays" EntityType="Self.tbl_Holidays" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Order" EntityType="Self.tbl_Order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_OrderType" EntityType="Self.tbl_OrderType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_PackageDetails" EntityType="Self.tbl_PackageDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_ParentDetails" EntityType="Self.tbl_ParentDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_PaymentDetails" EntityType="Self.tbl_PaymentDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_PaymentModeType" EntityType="Self.tbl_PaymentModeType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Scheduler" EntityType="Self.tbl_Scheduler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_SchoolDetails" EntityType="Self.tbl_SchoolDetails" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Address_tbl_AddressType" Association="Self.FK_tbl_Address_tbl_AddressType">
+            <End Role="tbl_AddressType" EntitySet="tbl_AddressType" />
+            <End Role="tbl_Address" EntitySet="tbl_Address" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Address_tbl_Area" Association="Self.FK_tbl_Address_tbl_Area">
+            <End Role="tbl_Area" EntitySet="tbl_Area" />
+            <End Role="tbl_Address" EntitySet="tbl_Address" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Address_tbl_ParentDetails" Association="Self.FK_tbl_Address_tbl_ParentDetails">
+            <End Role="tbl_ParentDetails" EntitySet="tbl_ParentDetails" />
+            <End Role="tbl_Address" EntitySet="tbl_Address" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_ChildDetails_tbl_ChildDetails" Association="Self.FK_tbl_ChildDetails_tbl_ChildDetails">
+            <End Role="tbl_AgeGroup" EntitySet="tbl_AgeGroup" />
+            <End Role="tbl_ChildDetails" EntitySet="tbl_ChildDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_ChildDetails_tbl_ParentDetails" Association="Self.FK_tbl_ChildDetails_tbl_ParentDetails">
+            <End Role="tbl_ParentDetails" EntitySet="tbl_ParentDetails" />
+            <End Role="tbl_ChildDetails" EntitySet="tbl_ChildDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_ChildDetails_tbl_ParentDetails1" Association="Self.FK_tbl_ChildDetails_tbl_ParentDetails1">
+            <End Role="tbl_ParentDetails" EntitySet="tbl_ParentDetails" />
+            <End Role="tbl_ChildDetails" EntitySet="tbl_ChildDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Discount_tbl_Category" Association="Self.FK_tbl_Discount_tbl_Category">
+            <End Role="tbl_CouponCategory" EntitySet="tbl_CouponCategory" />
+            <End Role="tbl_Discount" EntitySet="tbl_Discount" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Holidays_tbl_SchoolDetails" Association="Self.FK_tbl_Holidays_tbl_SchoolDetails">
+            <End Role="tbl_SchoolDetails" EntitySet="tbl_SchoolDetails" />
+            <End Role="tbl_Holidays" EntitySet="tbl_Holidays" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Order_tbl_ChildDetails" Association="Self.FK_tbl_Order_tbl_ChildDetails">
+            <End Role="tbl_ChildDetails" EntitySet="tbl_ChildDetails" />
+            <End Role="tbl_Order" EntitySet="tbl_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Order_tbl_OrderType" Association="Self.FK_tbl_Order_tbl_OrderType">
+            <End Role="tbl_OrderType" EntitySet="tbl_OrderType" />
+            <End Role="tbl_Order" EntitySet="tbl_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Order_tbl_PackageDetails" Association="Self.FK_tbl_Order_tbl_PackageDetails">
+            <End Role="tbl_PackageDetails" EntitySet="tbl_PackageDetails" />
+            <End Role="tbl_Order" EntitySet="tbl_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Order_tbl_ParentDetails" Association="Self.FK_tbl_Order_tbl_ParentDetails">
+            <End Role="tbl_ParentDetails" EntitySet="tbl_ParentDetails" />
+            <End Role="tbl_Order" EntitySet="tbl_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_PackageDetails_tbl_AgeGroup" Association="Self.FK_tbl_PackageDetails_tbl_AgeGroup">
+            <End Role="tbl_AgeGroup" EntitySet="tbl_AgeGroup" />
+            <End Role="tbl_PackageDetails" EntitySet="tbl_PackageDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Scheduler_tbl_ChildDetails" Association="Self.FK_tbl_Scheduler_tbl_ChildDetails">
+            <End Role="tbl_ChildDetails" EntitySet="tbl_ChildDetails" />
+            <End Role="tbl_Scheduler" EntitySet="tbl_Scheduler" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Scheduler_tbl_Order" Association="Self.FK_tbl_Scheduler_tbl_Order">
+            <End Role="tbl_Order" EntitySet="tbl_Order" />
+            <End Role="tbl_Scheduler" EntitySet="tbl_Scheduler" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_SchoolDetails_tbl_AreaList" Association="Self.FK_tbl_SchoolDetails_tbl_AreaList">
+            <End Role="tbl_Area" EntitySet="tbl_Area" />
+            <End Role="tbl_SchoolDetails" EntitySet="tbl_SchoolDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_SchoolDetails_tbl_PaymentModeType" Association="Self.FK_tbl_SchoolDetails_tbl_PaymentModeType">
+            <End Role="tbl_PaymentModeType" EntitySet="tbl_PaymentModeType" />
+            <End Role="tbl_SchoolDetails" EntitySet="tbl_SchoolDetails" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="sCoolMealWebDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaim">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogin">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+          <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+          <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tbl_Address">
+          <Key>
+            <PropertyRef Name="AddressId" />
+          </Key>
+          <Property Name="AddressId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ParentId" Type="Int32" Nullable="false" />
+          <Property Name="AreaId" Type="Int32" Nullable="false" />
+          <Property Name="AddressTypeId" Type="Int32" Nullable="false" />
+          <Property Name="AddressLine1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AddressLine2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Zipcode" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tbl_AddressType" Relationship="Self.FK_tbl_Address_tbl_AddressType" FromRole="tbl_Address" ToRole="tbl_AddressType" />
+          <NavigationProperty Name="tbl_Area" Relationship="Self.FK_tbl_Address_tbl_Area" FromRole="tbl_Address" ToRole="tbl_Area" />
+          <NavigationProperty Name="tbl_ParentDetails" Relationship="Self.FK_tbl_Address_tbl_ParentDetails" FromRole="tbl_Address" ToRole="tbl_ParentDetails" />
+        </EntityType>
+        <EntityType Name="tbl_AddressType">
+          <Key>
+            <PropertyRef Name="AddressTypeId" />
+          </Key>
+          <Property Name="AddressTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AddressType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AddressDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="tbl_Address" Relationship="Self.FK_tbl_Address_tbl_AddressType" FromRole="tbl_AddressType" ToRole="tbl_Address" />
+        </EntityType>
+        <EntityType Name="tbl_AgeGroup">
+          <Key>
+            <PropertyRef Name="AgeGroupId" />
+          </Key>
+          <Property Name="AgeGroupId" Type="Int32" Nullable="false" />
+          <Property Name="Class" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AgeGroupType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="tbl_ChildDetails" Relationship="Self.FK_tbl_ChildDetails_tbl_ChildDetails" FromRole="tbl_AgeGroup" ToRole="tbl_ChildDetails" />
+          <NavigationProperty Name="tbl_PackageDetails" Relationship="Self.FK_tbl_PackageDetails_tbl_AgeGroup" FromRole="tbl_AgeGroup" ToRole="tbl_PackageDetails" />
+        </EntityType>
+        <EntityType Name="tbl_Area">
+          <Key>
+            <PropertyRef Name="AreaId" />
+          </Key>
+          <Property Name="AreaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AreaName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsActive" Type="Int32" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="tbl_Address" Relationship="Self.FK_tbl_Address_tbl_Area" FromRole="tbl_Area" ToRole="tbl_Address" />
+          <NavigationProperty Name="tbl_SchoolDetails" Relationship="Self.FK_tbl_SchoolDetails_tbl_AreaList" FromRole="tbl_Area" ToRole="tbl_SchoolDetails" />
+        </EntityType>
+        <EntityType Name="tbl_ChildDetails">
+          <Key>
+            <PropertyRef Name="ChildId" />
+          </Key>
+          <Property Name="ChildId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PrimaryParentId" Type="Int32" Nullable="false" />
+          <Property Name="SecondaryParentId" Type="Int32" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+          <Property Name="Gender" Type="Int32" />
+          <Property Name="SchoolId" Type="Int32" Nullable="false" />
+          <Property Name="Standard" Type="Int32" Nullable="false" />
+          <Property Name="Division" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HomeAddressId" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="IsActive" Type="Int32" Nullable="false" />
+          <Property Name="AgeGroupId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tbl_AgeGroup" Relationship="Self.FK_tbl_ChildDetails_tbl_ChildDetails" FromRole="tbl_ChildDetails" ToRole="tbl_AgeGroup" />
+          <NavigationProperty Name="tbl_ParentDetails" Relationship="Self.FK_tbl_ChildDetails_tbl_ParentDetails" FromRole="tbl_ChildDetails" ToRole="tbl_ParentDetails" />
+          <NavigationProperty Name="tbl_ParentDetails1" Relationship="Self.FK_tbl_ChildDetails_tbl_ParentDetails1" FromRole="tbl_ChildDetails" ToRole="tbl_ParentDetails" />
+          <NavigationProperty Name="tbl_Order" Relationship="Self.FK_tbl_Order_tbl_ChildDetails" FromRole="tbl_ChildDetails" ToRole="tbl_Order" />
+          <NavigationProperty Name="tbl_Scheduler" Relationship="Self.FK_tbl_Scheduler_tbl_ChildDetails" FromRole="tbl_ChildDetails" ToRole="tbl_Scheduler" />
+        </EntityType>
+        <EntityType Name="tbl_CouponCategory">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsActive" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="tbl_Discount" Relationship="Self.FK_tbl_Discount_tbl_Category" FromRole="tbl_CouponCategory" ToRole="tbl_Discount" />
+        </EntityType>
+        <EntityType Name="tbl_Discount">
+          <Key>
+            <PropertyRef Name="DiscountId" />
+          </Key>
+          <Property Name="DiscountId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CouponCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DiscountAmout" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="DiscountPercentage" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="DiscountedAmountTillDate" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Validity" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CouponDescription" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ApplicableCount" Type="Int32" />
+          <Property Name="IssuedCount" Type="Int32" />
+          <Property Name="CouponCategory" Type="Int32" />
+          <Property Name="IsActive" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tbl_CouponCategory" Relationship="Self.FK_tbl_Discount_tbl_Category" FromRole="tbl_Discount" ToRole="tbl_CouponCategory" />
+        </EntityType>
+        <EntityType Name="tbl_Feedback">
+          <Key>
+            <PropertyRef Name="FeedbackId" />
+          </Key>
+          <Property Name="FeedbackId" Type="Int32" Nullable="false" />
+          <Property Name="ParentId" Type="Int32" />
+          <Property Name="FeedbackMsg" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CanDisplayFeedback" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_Holidays">
+          <Key>
+            <PropertyRef Name="HolidayId" />
+          </Key>
+          <Property Name="HolidayId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SchoolId" Type="Int32" Nullable="false" />
+          <Property Name="HolidayDate" Type="DateTime" Precision="3" />
+          <Property Name="HolidayName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Int32" />
+          <NavigationProperty Name="tbl_SchoolDetails" Relationship="Self.FK_tbl_Holidays_tbl_SchoolDetails" FromRole="tbl_Holidays" ToRole="tbl_SchoolDetails" />
+        </EntityType>
+        <EntityType Name="tbl_Order">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Name="OrderId" Type="Int32" Nullable="false" />
+          <Property Name="ParentId" Type="Int32" />
+          <Property Name="ChildId" Type="Int32" />
+          <Property Name="PackageId" Type="Int32" />
+          <Property Name="OrderTypeId" Type="Int32" />
+          <Property Name="MenuId" Type="Int32" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="OrderComplete" Type="Int32" Nullable="false" />
+          <Property Name="PurchaseDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Validity" Type="DateTime" Precision="3" />
+          <Property Name="TotalOrderAmount" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="OrderCurrent" Type="Int32" Nullable="false" />
+          <Property Name="OrderUpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OrderUpdateReason" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PaymentId" Type="Int32" />
+          <NavigationProperty Name="tbl_ChildDetails" Relationship="Self.FK_tbl_Order_tbl_ChildDetails" FromRole="tbl_Order" ToRole="tbl_ChildDetails" />
+          <NavigationProperty Name="tbl_OrderType" Relationship="Self.FK_tbl_Order_tbl_OrderType" FromRole="tbl_Order" ToRole="tbl_OrderType" />
+          <NavigationProperty Name="tbl_PackageDetails" Relationship="Self.FK_tbl_Order_tbl_PackageDetails" FromRole="tbl_Order" ToRole="tbl_PackageDetails" />
+          <NavigationProperty Name="tbl_ParentDetails" Relationship="Self.FK_tbl_Order_tbl_ParentDetails" FromRole="tbl_Order" ToRole="tbl_ParentDetails" />
+          <NavigationProperty Name="tbl_Scheduler" Relationship="Self.FK_tbl_Scheduler_tbl_Order" FromRole="tbl_Order" ToRole="tbl_Scheduler" />
+        </EntityType>
+        <EntityType Name="tbl_OrderType">
+          <Key>
+            <PropertyRef Name="OrderTypeId" />
+          </Key>
+          <Property Name="OrderTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tbl_Order" Relationship="Self.FK_tbl_Order_tbl_OrderType" FromRole="tbl_OrderType" ToRole="tbl_Order" />
+        </EntityType>
+        <EntityType Name="tbl_PackageDetails">
+          <Key>
+            <PropertyRef Name="PackageId" />
+          </Key>
+          <Property Name="PackageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PackageName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PackageDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MealCount" Type="Int32" />
+          <Property Name="WalletAmount" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="AgeGroupId" Type="Int32" />
+          <Property Name="PerMealCost" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="Validity" Type="Int32" />
+          <Property Name="Breakfast" Type="Int32" />
+          <Property Name="Lunch" Type="Int32" />
+          <Property Name="EveningSnack" Type="Int32" />
+          <Property Name="AllDayMeal" Type="Int32" />
+          <Property Name="Wallet" Type="Int32" />
+          <Property Name="Tuckshop" Type="Int32" />
+          <NavigationProperty Name="tbl_AgeGroup" Relationship="Self.FK_tbl_PackageDetails_tbl_AgeGroup" FromRole="tbl_PackageDetails" ToRole="tbl_AgeGroup" />
+          <NavigationProperty Name="tbl_Order" Relationship="Self.FK_tbl_Order_tbl_PackageDetails" FromRole="tbl_PackageDetails" ToRole="tbl_Order" />
+        </EntityType>
+        <EntityType Name="tbl_ParentDetails">
+          <Key>
+            <PropertyRef Name="ParentId" />
+          </Key>
+          <Property Name="ParentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MobileNumber" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsActive" Type="Int32" Nullable="false" />
+          <Property Name="HomeAddressId" Type="Int32" />
+          <Property Name="Gender" Type="Int32" />
+          <Property Name="OtherParentMobile" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tbl_Address" Relationship="Self.FK_tbl_Address_tbl_ParentDetails" FromRole="tbl_ParentDetails" ToRole="tbl_Address" />
+          <NavigationProperty Name="tbl_ChildDetails" Relationship="Self.FK_tbl_ChildDetails_tbl_ParentDetails" FromRole="tbl_ParentDetails" ToRole="tbl_ChildDetails" />
+          <NavigationProperty Name="tbl_ChildDetails1" Relationship="Self.FK_tbl_ChildDetails_tbl_ParentDetails1" FromRole="tbl_ParentDetails" ToRole="tbl_ChildDetails" />
+          <NavigationProperty Name="tbl_Order" Relationship="Self.FK_tbl_Order_tbl_ParentDetails" FromRole="tbl_ParentDetails" ToRole="tbl_Order" />
+        </EntityType>
+        <EntityType Name="tbl_PaymentDetails">
+          <Key>
+            <PropertyRef Name="PaymentId" />
+          </Key>
+          <Property Name="PaymentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PaymentType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TransactionId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="OrderAmount" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="TaxAmount" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="TotalOrderAmount" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="PaymentStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PaidDate" Type="DateTime" Precision="3" />
+          <Property Name="RefundStatus" Type="Int32" Nullable="false" />
+          <Property Name="RefundType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IssuedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RefundAmount" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="RefundDate" Type="DateTime" Precision="3" />
+          <Property Name="OrderId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_PaymentModeType">
+          <Key>
+            <PropertyRef Name="PaymentModeId" />
+          </Key>
+          <Property Name="PaymentModeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PaymentModeType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="tbl_SchoolDetails" Relationship="Self.FK_tbl_SchoolDetails_tbl_PaymentModeType" FromRole="tbl_PaymentModeType" ToRole="tbl_SchoolDetails" />
+        </EntityType>
+        <EntityType Name="tbl_Scheduler">
+          <Key>
+            <PropertyRef Name="SchedulerId" />
+          </Key>
+          <Property Name="SchedulerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ChildId" Type="Int32" />
+          <Property Name="OrderId" Type="Int32" />
+          <Property Name="FromDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ToDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MealScheduled" Type="Int32" Nullable="false" />
+          <Property Name="NoOfMealsLeft" Type="Int32" />
+          <Property Name="WalletAmount" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="Breakfast" Type="Int32" />
+          <Property Name="Lunch" Type="Int32" />
+          <Property Name="Snack" Type="Int32" />
+          <Property Name="MenuId" Type="Int32" />
+          <NavigationProperty Name="tbl_ChildDetails" Relationship="Self.FK_tbl_Scheduler_tbl_ChildDetails" FromRole="tbl_Scheduler" ToRole="tbl_ChildDetails" />
+          <NavigationProperty Name="tbl_Order" Relationship="Self.FK_tbl_Scheduler_tbl_Order" FromRole="tbl_Scheduler" ToRole="tbl_Order" />
+        </EntityType>
+        <EntityType Name="tbl_SchoolDetails">
+          <Key>
+            <PropertyRef Name="SchoolId" />
+          </Key>
+          <Property Name="SchoolId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SchoolType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SchoolName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AreaId" Type="Int32" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Zipcode" Type="Int32" Nullable="false" />
+          <Property Name="ContactNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="ShortBreakTime" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="LongBreakTime" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="TuckShop" Type="Int32" Nullable="false" />
+          <Property Name="PaymentMode" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tbl_Area" Relationship="Self.FK_tbl_SchoolDetails_tbl_AreaList" FromRole="tbl_SchoolDetails" ToRole="tbl_Area" />
+          <NavigationProperty Name="tbl_Holidays" Relationship="Self.FK_tbl_Holidays_tbl_SchoolDetails" FromRole="tbl_SchoolDetails" ToRole="tbl_Holidays" />
+          <NavigationProperty Name="tbl_PaymentModeType" Relationship="Self.FK_tbl_SchoolDetails_tbl_PaymentModeType" FromRole="tbl_SchoolDetails" ToRole="tbl_PaymentModeType" />
+        </EntityType>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Address_tbl_AddressType">
+          <End Role="tbl_AddressType" Type="Self.tbl_AddressType" Multiplicity="1" />
+          <End Role="tbl_Address" Type="Self.tbl_Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_AddressType">
+              <PropertyRef Name="AddressTypeId" />
+            </Principal>
+            <Dependent Role="tbl_Address">
+              <PropertyRef Name="AddressTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Address_tbl_Area">
+          <End Role="tbl_Area" Type="Self.tbl_Area" Multiplicity="1" />
+          <End Role="tbl_Address" Type="Self.tbl_Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Area">
+              <PropertyRef Name="AreaId" />
+            </Principal>
+            <Dependent Role="tbl_Address">
+              <PropertyRef Name="AreaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Address_tbl_ParentDetails">
+          <End Role="tbl_ParentDetails" Type="Self.tbl_ParentDetails" Multiplicity="1" />
+          <End Role="tbl_Address" Type="Self.tbl_Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_ParentDetails">
+              <PropertyRef Name="ParentId" />
+            </Principal>
+            <Dependent Role="tbl_Address">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_ChildDetails_tbl_ChildDetails">
+          <End Role="tbl_AgeGroup" Type="Self.tbl_AgeGroup" Multiplicity="1" />
+          <End Role="tbl_ChildDetails" Type="Self.tbl_ChildDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_AgeGroup">
+              <PropertyRef Name="AgeGroupId" />
+            </Principal>
+            <Dependent Role="tbl_ChildDetails">
+              <PropertyRef Name="AgeGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_PackageDetails_tbl_AgeGroup">
+          <End Role="tbl_AgeGroup" Type="Self.tbl_AgeGroup" Multiplicity="0..1" />
+          <End Role="tbl_PackageDetails" Type="Self.tbl_PackageDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_AgeGroup">
+              <PropertyRef Name="AgeGroupId" />
+            </Principal>
+            <Dependent Role="tbl_PackageDetails">
+              <PropertyRef Name="AgeGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_SchoolDetails_tbl_AreaList">
+          <End Role="tbl_Area" Type="Self.tbl_Area" Multiplicity="1" />
+          <End Role="tbl_SchoolDetails" Type="Self.tbl_SchoolDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Area">
+              <PropertyRef Name="AreaId" />
+            </Principal>
+            <Dependent Role="tbl_SchoolDetails">
+              <PropertyRef Name="AreaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_ChildDetails_tbl_ParentDetails">
+          <End Role="tbl_ParentDetails" Type="Self.tbl_ParentDetails" Multiplicity="1" />
+          <End Role="tbl_ChildDetails" Type="Self.tbl_ChildDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_ParentDetails">
+              <PropertyRef Name="ParentId" />
+            </Principal>
+            <Dependent Role="tbl_ChildDetails">
+              <PropertyRef Name="PrimaryParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_ChildDetails_tbl_ParentDetails1">
+          <End Role="tbl_ParentDetails" Type="Self.tbl_ParentDetails" Multiplicity="0..1" />
+          <End Role="tbl_ChildDetails" Type="Self.tbl_ChildDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_ParentDetails">
+              <PropertyRef Name="ParentId" />
+            </Principal>
+            <Dependent Role="tbl_ChildDetails">
+              <PropertyRef Name="SecondaryParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Order_tbl_ChildDetails">
+          <End Role="tbl_ChildDetails" Type="Self.tbl_ChildDetails" Multiplicity="0..1" />
+          <End Role="tbl_Order" Type="Self.tbl_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_ChildDetails">
+              <PropertyRef Name="ChildId" />
+            </Principal>
+            <Dependent Role="tbl_Order">
+              <PropertyRef Name="ChildId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Scheduler_tbl_ChildDetails">
+          <End Role="tbl_ChildDetails" Type="Self.tbl_ChildDetails" Multiplicity="0..1" />
+          <End Role="tbl_Scheduler" Type="Self.tbl_Scheduler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_ChildDetails">
+              <PropertyRef Name="ChildId" />
+            </Principal>
+            <Dependent Role="tbl_Scheduler">
+              <PropertyRef Name="ChildId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Discount_tbl_Category">
+          <End Role="tbl_CouponCategory" Type="Self.tbl_CouponCategory" Multiplicity="0..1" />
+          <End Role="tbl_Discount" Type="Self.tbl_Discount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_CouponCategory">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="tbl_Discount">
+              <PropertyRef Name="CouponCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Holidays_tbl_SchoolDetails">
+          <End Role="tbl_SchoolDetails" Type="Self.tbl_SchoolDetails" Multiplicity="1" />
+          <End Role="tbl_Holidays" Type="Self.tbl_Holidays" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_SchoolDetails">
+              <PropertyRef Name="SchoolId" />
+            </Principal>
+            <Dependent Role="tbl_Holidays">
+              <PropertyRef Name="SchoolId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Order_tbl_OrderType">
+          <End Role="tbl_OrderType" Type="Self.tbl_OrderType" Multiplicity="0..1" />
+          <End Role="tbl_Order" Type="Self.tbl_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_OrderType">
+              <PropertyRef Name="OrderTypeId" />
+            </Principal>
+            <Dependent Role="tbl_Order">
+              <PropertyRef Name="OrderTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Order_tbl_PackageDetails">
+          <End Role="tbl_PackageDetails" Type="Self.tbl_PackageDetails" Multiplicity="0..1" />
+          <End Role="tbl_Order" Type="Self.tbl_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_PackageDetails">
+              <PropertyRef Name="PackageId" />
+            </Principal>
+            <Dependent Role="tbl_Order">
+              <PropertyRef Name="PackageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Order_tbl_ParentDetails">
+          <End Role="tbl_ParentDetails" Type="Self.tbl_ParentDetails" Multiplicity="0..1" />
+          <End Role="tbl_Order" Type="Self.tbl_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_ParentDetails">
+              <PropertyRef Name="ParentId" />
+            </Principal>
+            <Dependent Role="tbl_Order">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Scheduler_tbl_Order">
+          <End Role="tbl_Order" Type="Self.tbl_Order" Multiplicity="0..1" />
+          <End Role="tbl_Scheduler" Type="Self.tbl_Scheduler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Order">
+              <PropertyRef Name="OrderId" />
+            </Principal>
+            <Dependent Role="tbl_Scheduler">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_SchoolDetails_tbl_PaymentModeType">
+          <End Role="tbl_PaymentModeType" Type="Self.tbl_PaymentModeType" Multiplicity="1" />
+          <End Role="tbl_SchoolDetails" Type="Self.tbl_SchoolDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_PaymentModeType">
+              <PropertyRef Name="PaymentModeId" />
+            </Principal>
+            <Dependent Role="tbl_SchoolDetails">
+              <PropertyRef Name="PaymentMode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspNetUserRoles">
+          <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="*" />
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="sCoolMealWebDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRole" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogin" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUser" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="tbl_Address" EntityType="Self.tbl_Address" />
+          <EntitySet Name="tbl_AddressType" EntityType="Self.tbl_AddressType" />
+          <EntitySet Name="tbl_AgeGroup" EntityType="Self.tbl_AgeGroup" />
+          <EntitySet Name="tbl_Area" EntityType="Self.tbl_Area" />
+          <EntitySet Name="tbl_ChildDetails" EntityType="Self.tbl_ChildDetails" />
+          <EntitySet Name="tbl_CouponCategory" EntityType="Self.tbl_CouponCategory" />
+          <EntitySet Name="tbl_Discount" EntityType="Self.tbl_Discount" />
+          <EntitySet Name="tbl_Feedback" EntityType="Self.tbl_Feedback" />
+          <EntitySet Name="tbl_Holidays" EntityType="Self.tbl_Holidays" />
+          <EntitySet Name="tbl_Order" EntityType="Self.tbl_Order" />
+          <EntitySet Name="tbl_OrderType" EntityType="Self.tbl_OrderType" />
+          <EntitySet Name="tbl_PackageDetails" EntityType="Self.tbl_PackageDetails" />
+          <EntitySet Name="tbl_ParentDetails" EntityType="Self.tbl_ParentDetails" />
+          <EntitySet Name="tbl_PaymentDetails" EntityType="Self.tbl_PaymentDetails" />
+          <EntitySet Name="tbl_PaymentModeType" EntityType="Self.tbl_PaymentModeType" />
+          <EntitySet Name="tbl_Scheduler" EntityType="Self.tbl_Scheduler" />
+          <EntitySet Name="tbl_SchoolDetails" EntityType="Self.tbl_SchoolDetails" />
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Address_tbl_AddressType" Association="Self.FK_tbl_Address_tbl_AddressType">
+            <End Role="tbl_AddressType" EntitySet="tbl_AddressType" />
+            <End Role="tbl_Address" EntitySet="tbl_Address" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Address_tbl_Area" Association="Self.FK_tbl_Address_tbl_Area">
+            <End Role="tbl_Area" EntitySet="tbl_Area" />
+            <End Role="tbl_Address" EntitySet="tbl_Address" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Address_tbl_ParentDetails" Association="Self.FK_tbl_Address_tbl_ParentDetails">
+            <End Role="tbl_ParentDetails" EntitySet="tbl_ParentDetails" />
+            <End Role="tbl_Address" EntitySet="tbl_Address" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_ChildDetails_tbl_ChildDetails" Association="Self.FK_tbl_ChildDetails_tbl_ChildDetails">
+            <End Role="tbl_AgeGroup" EntitySet="tbl_AgeGroup" />
+            <End Role="tbl_ChildDetails" EntitySet="tbl_ChildDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_PackageDetails_tbl_AgeGroup" Association="Self.FK_tbl_PackageDetails_tbl_AgeGroup">
+            <End Role="tbl_AgeGroup" EntitySet="tbl_AgeGroup" />
+            <End Role="tbl_PackageDetails" EntitySet="tbl_PackageDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_SchoolDetails_tbl_AreaList" Association="Self.FK_tbl_SchoolDetails_tbl_AreaList">
+            <End Role="tbl_Area" EntitySet="tbl_Area" />
+            <End Role="tbl_SchoolDetails" EntitySet="tbl_SchoolDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_ChildDetails_tbl_ParentDetails" Association="Self.FK_tbl_ChildDetails_tbl_ParentDetails">
+            <End Role="tbl_ParentDetails" EntitySet="tbl_ParentDetails" />
+            <End Role="tbl_ChildDetails" EntitySet="tbl_ChildDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_ChildDetails_tbl_ParentDetails1" Association="Self.FK_tbl_ChildDetails_tbl_ParentDetails1">
+            <End Role="tbl_ParentDetails" EntitySet="tbl_ParentDetails" />
+            <End Role="tbl_ChildDetails" EntitySet="tbl_ChildDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Order_tbl_ChildDetails" Association="Self.FK_tbl_Order_tbl_ChildDetails">
+            <End Role="tbl_ChildDetails" EntitySet="tbl_ChildDetails" />
+            <End Role="tbl_Order" EntitySet="tbl_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Scheduler_tbl_ChildDetails" Association="Self.FK_tbl_Scheduler_tbl_ChildDetails">
+            <End Role="tbl_ChildDetails" EntitySet="tbl_ChildDetails" />
+            <End Role="tbl_Scheduler" EntitySet="tbl_Scheduler" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Discount_tbl_Category" Association="Self.FK_tbl_Discount_tbl_Category">
+            <End Role="tbl_CouponCategory" EntitySet="tbl_CouponCategory" />
+            <End Role="tbl_Discount" EntitySet="tbl_Discount" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Holidays_tbl_SchoolDetails" Association="Self.FK_tbl_Holidays_tbl_SchoolDetails">
+            <End Role="tbl_SchoolDetails" EntitySet="tbl_SchoolDetails" />
+            <End Role="tbl_Holidays" EntitySet="tbl_Holidays" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Order_tbl_OrderType" Association="Self.FK_tbl_Order_tbl_OrderType">
+            <End Role="tbl_OrderType" EntitySet="tbl_OrderType" />
+            <End Role="tbl_Order" EntitySet="tbl_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Order_tbl_PackageDetails" Association="Self.FK_tbl_Order_tbl_PackageDetails">
+            <End Role="tbl_PackageDetails" EntitySet="tbl_PackageDetails" />
+            <End Role="tbl_Order" EntitySet="tbl_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Order_tbl_ParentDetails" Association="Self.FK_tbl_Order_tbl_ParentDetails">
+            <End Role="tbl_ParentDetails" EntitySet="tbl_ParentDetails" />
+            <End Role="tbl_Order" EntitySet="tbl_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Scheduler_tbl_Order" Association="Self.FK_tbl_Scheduler_tbl_Order">
+            <End Role="tbl_Order" EntitySet="tbl_Order" />
+            <End Role="tbl_Scheduler" EntitySet="tbl_Scheduler" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_SchoolDetails_tbl_PaymentModeType" Association="Self.FK_tbl_SchoolDetails_tbl_PaymentModeType">
+            <End Role="tbl_PaymentModeType" EntitySet="tbl_PaymentModeType" />
+            <End Role="tbl_SchoolDetails" EntitySet="tbl_SchoolDetails" />
+          </AssociationSet>
+          <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="sCoolMealWebDBModelStoreContainer" CdmEntityContainer="sCoolMealWebDBEntities">
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="sCoolMealWebDBModel.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetRoles">
+            <EntityTypeMapping TypeName="sCoolMealWebDBModel.AspNetRole">
+              <MappingFragment StoreEntitySet="AspNetRoles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserClaims">
+            <EntityTypeMapping TypeName="sCoolMealWebDBModel.AspNetUserClaim">
+              <MappingFragment StoreEntitySet="AspNetUserClaims">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserLogins">
+            <EntityTypeMapping TypeName="sCoolMealWebDBModel.AspNetUserLogin">
+              <MappingFragment StoreEntitySet="AspNetUserLogins">
+                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="sCoolMealWebDBModel.AspNetUser">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="sCoolMealWebDBModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Address">
+            <EntityTypeMapping TypeName="sCoolMealWebDBModel.tbl_Address">
+              <MappingFragment StoreEntitySet="tbl_Address">
+                <ScalarProperty Name="AddressId" ColumnName="AddressId" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+                <ScalarProperty Name="AddressTypeId" ColumnName="AddressTypeId" />
+                <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+                <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+                <ScalarProperty Name="Zipcode" ColumnName="Zipcode" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_AddressType">
+            <EntityTypeMapping TypeName="sCoolMealWebDBModel.tbl_AddressType">
+              <MappingFragment StoreEntitySet="tbl_AddressType">
+                <ScalarProperty Name="AddressTypeId" ColumnName="AddressTypeId" />
+                <ScalarProperty Name="AddressType" ColumnName="AddressType" />
+                <ScalarProperty Name="AddressDescription" ColumnName="AddressDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_AgeGroup">
+            <EntityTypeMapping TypeName="sCoolMealWebDBModel.tbl_AgeGroup">
+              <MappingFragment StoreEntitySet="tbl_AgeGroup">
+                <ScalarProperty Name="AgeGroupId" ColumnName="AgeGroupId" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="AgeGroupType" ColumnName="AgeGroupType" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Area">
+            <EntityTypeMapping TypeName="sCoolMealWebDBModel.tbl_Area">
+              <MappingFragment StoreEntitySet="tbl_Area">
+                <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+                <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="City" ColumnName="City" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ChildDetails">
+            <EntityTypeMapping TypeName="sCoolMealWebDBModel.tbl_ChildDetails">
+              <MappingFragment StoreEntitySet="tbl_ChildDetails">
+                <ScalarProperty Name="ChildId" ColumnName="ChildId" />
+                <ScalarProperty Name="PrimaryParentId" ColumnName="PrimaryParentId" />
+                <ScalarProperty Name="SecondaryParentId" ColumnName="SecondaryParentId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="SchoolId" ColumnName="SchoolId" />
+                <ScalarProperty Name="Standard" ColumnName="Standard" />
+                <ScalarProperty Name="Division" ColumnName="Division" />
+                <ScalarProperty Name="HomeAddressId" ColumnName="HomeAddressId" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="AgeGroupId" ColumnName="AgeGroupId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_CouponCategory">
+            <EntityTypeMapping TypeName="sCoolMealWebDBModel.tbl_CouponCategory">
+              <MappingFragment StoreEntitySet="tbl_CouponCategory">
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="CategoryType" ColumnName="CategoryType" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Discount">
+            <EntityTypeMapping TypeName="sCoolMealWebDBModel.tbl_Discount">
+              <MappingFragment StoreEntitySet="tbl_Discount">
+                <ScalarProperty Name="DiscountId" ColumnName="DiscountId" />
+                <ScalarProperty Name="CouponCode" ColumnName="CouponCode" />
+                <ScalarProperty Name="DiscountAmout" ColumnName="DiscountAmout" />
+                <ScalarProperty Name="DiscountPercentage" ColumnName="DiscountPercentage" />
+                <ScalarProperty Name="DiscountedAmountTillDate" ColumnName="DiscountedAmountTillDate" />
+                <ScalarProperty Name="Validity" ColumnName="Validity" />
+                <ScalarProperty Name="CouponDescription" ColumnName="CouponDescription" />
+                <ScalarProperty Name="ApplicableCount" ColumnName="ApplicableCount" />
+                <ScalarProperty Name="IssuedCount" ColumnName="IssuedCount" />
+                <ScalarProperty Name="CouponCategory" ColumnName="CouponCategory" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Feedback">
+            <EntityTypeMapping TypeName="sCoolMealWebDBModel.tbl_Feedback">
+              <MappingFragment StoreEntitySet="tbl_Feedback">
+                <ScalarProperty Name="FeedbackId" ColumnName="FeedbackId" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="FeedbackMsg" ColumnName="FeedbackMsg" />
+                <ScalarProperty Name="CanDisplayFeedback" ColumnName="CanDisplayFeedback" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Holidays">
+            <EntityTypeMapping TypeName="sCoolMealWebDBModel.tbl_Holidays">
+              <MappingFragment StoreEntitySet="tbl_Holidays">
+                <ScalarProperty Name="HolidayId" ColumnName="HolidayId" />
+                <ScalarProperty Name="SchoolId" ColumnName="SchoolId" />
+                <ScalarProperty Name="HolidayDate" ColumnName="HolidayDate" />
+                <ScalarProperty Name="HolidayName" ColumnName="HolidayName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Order">
+            <EntityTypeMapping TypeName="sCoolMealWebDBModel.tbl_Order">
+              <MappingFragment StoreEntitySet="tbl_Order">
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="ChildId" ColumnName="ChildId" />
+                <ScalarProperty Name="PackageId" ColumnName="PackageId" />
+                <ScalarProperty Name="OrderTypeId" ColumnName="OrderTypeId" />
+                <ScalarProperty Name="MenuId" ColumnName="MenuId" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="OrderComplete" ColumnName="OrderComplete" />
+                <ScalarProperty Name="PurchaseDate" ColumnName="PurchaseDate" />
+                <ScalarProperty Name="Validity" ColumnName="Validity" />
+                <ScalarProperty Name="TotalOrderAmount" ColumnName="TotalOrderAmount" />
+                <ScalarProperty Name="OrderCurrent" ColumnName="OrderCurrent" />
+                <ScalarProperty Name="OrderUpdateDate" ColumnName="OrderUpdateDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="OrderUpdateReason" ColumnName="OrderUpdateReason" />
+                <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_OrderType">
+            <EntityTypeMapping TypeName="sCoolMealWebDBModel.tbl_OrderType">
+              <MappingFragment StoreEntitySet="tbl_OrderType">
+                <ScalarProperty Name="OrderTypeId" ColumnName="OrderTypeId" />
+                <ScalarProperty Name="OrderType" ColumnName="OrderType" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_PackageDetails">
+            <EntityTypeMapping TypeName="sCoolMealWebDBModel.tbl_PackageDetails">
+              <MappingFragment StoreEntitySet="tbl_PackageDetails">
+                <ScalarProperty Name="PackageId" ColumnName="PackageId" />
+                <ScalarProperty Name="PackageName" ColumnName="PackageName" />
+                <ScalarProperty Name="PackageDescription" ColumnName="PackageDescription" />
+                <ScalarProperty Name="MealCount" ColumnName="MealCount" />
+                <ScalarProperty Name="WalletAmount" ColumnName="WalletAmount" />
+                <ScalarProperty Name="AgeGroupId" ColumnName="AgeGroupId" />
+                <ScalarProperty Name="PerMealCost" ColumnName="PerMealCost" />
+                <ScalarProperty Name="Validity" ColumnName="Validity" />
+                <ScalarProperty Name="Breakfast" ColumnName="Breakfast" />
+                <ScalarProperty Name="Lunch" ColumnName="Lunch" />
+                <ScalarProperty Name="EveningSnack" ColumnName="EveningSnack" />
+                <ScalarProperty Name="AllDayMeal" ColumnName="AllDayMeal" />
+                <ScalarProperty Name="Wallet" ColumnName="Wallet" />
+                <ScalarProperty Name="Tuckshop" ColumnName="Tuckshop" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ParentDetails">
+            <EntityTypeMapping TypeName="sCoolMealWebDBModel.tbl_ParentDetails">
+              <MappingFragment StoreEntitySet="tbl_ParentDetails">
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="HomeAddressId" ColumnName="HomeAddressId" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="OtherParentMobile" ColumnName="OtherParentMobile" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_PaymentDetails">
+            <EntityTypeMapping TypeName="sCoolMealWebDBModel.tbl_PaymentDetails">
+              <MappingFragment StoreEntitySet="tbl_PaymentDetails">
+                <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+                <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+                <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+                <ScalarProperty Name="OrderAmount" ColumnName="OrderAmount" />
+                <ScalarProperty Name="TaxAmount" ColumnName="TaxAmount" />
+                <ScalarProperty Name="TotalOrderAmount" ColumnName="TotalOrderAmount" />
+                <ScalarProperty Name="PaymentStatus" ColumnName="PaymentStatus" />
+                <ScalarProperty Name="PaidDate" ColumnName="PaidDate" />
+                <ScalarProperty Name="RefundStatus" ColumnName="RefundStatus" />
+                <ScalarProperty Name="RefundType" ColumnName="RefundType" />
+                <ScalarProperty Name="IssuedBy" ColumnName="IssuedBy" />
+                <ScalarProperty Name="RefundAmount" ColumnName="RefundAmount" />
+                <ScalarProperty Name="RefundDate" ColumnName="RefundDate" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_PaymentModeType">
+            <EntityTypeMapping TypeName="sCoolMealWebDBModel.tbl_PaymentModeType">
+              <MappingFragment StoreEntitySet="tbl_PaymentModeType">
+                <ScalarProperty Name="PaymentModeId" ColumnName="PaymentModeId" />
+                <ScalarProperty Name="PaymentModeType" ColumnName="PaymentModeType" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Scheduler">
+            <EntityTypeMapping TypeName="sCoolMealWebDBModel.tbl_Scheduler">
+              <MappingFragment StoreEntitySet="tbl_Scheduler">
+                <ScalarProperty Name="SchedulerId" ColumnName="SchedulerId" />
+                <ScalarProperty Name="ChildId" ColumnName="ChildId" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+                <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+                <ScalarProperty Name="MealScheduled" ColumnName="MealScheduled" />
+                <ScalarProperty Name="NoOfMealsLeft" ColumnName="NoOfMealsLeft" />
+                <ScalarProperty Name="WalletAmount" ColumnName="WalletAmount" />
+                <ScalarProperty Name="Breakfast" ColumnName="Breakfast" />
+                <ScalarProperty Name="Lunch" ColumnName="Lunch" />
+                <ScalarProperty Name="Snack" ColumnName="Snack" />
+                <ScalarProperty Name="MenuId" ColumnName="MenuId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_SchoolDetails">
+            <EntityTypeMapping TypeName="sCoolMealWebDBModel.tbl_SchoolDetails">
+              <MappingFragment StoreEntitySet="tbl_SchoolDetails">
+                <ScalarProperty Name="SchoolId" ColumnName="SchoolId" />
+                <ScalarProperty Name="SchoolType" ColumnName="SchoolType" />
+                <ScalarProperty Name="SchoolName" ColumnName="SchoolName" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Zipcode" ColumnName="Zipcode" />
+                <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+                <ScalarProperty Name="ShortBreakTime" ColumnName="ShortBreakTime" />
+                <ScalarProperty Name="LongBreakTime" ColumnName="LongBreakTime" />
+                <ScalarProperty Name="TuckShop" ColumnName="TuckShop" />
+                <ScalarProperty Name="PaymentMode" ColumnName="PaymentMode" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="AspNetUserRoles" TypeName="sCoolMealWebDBModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+            <EndProperty Name="AspNetRoles">
+              <ScalarProperty Name="Id" ColumnName="RoleId" />
+            </EndProperty>
+            <EndProperty Name="AspNetUsers">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
